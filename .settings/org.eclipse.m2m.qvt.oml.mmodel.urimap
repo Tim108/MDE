@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" targetURI="platform:/resource/Project/metamodels/java.ecore"/>
+  <mapping sourceURI="http://www.example.org/ourjava" targetURI="platform:/resource/Project/metamodels/ourjava.ecore"/>
+  <mapping sourceURI="http://www.example.org/mdeProject" targetURI="platform:/resource/Project/metamodels/ModelViewPresenter.ecore"/>
+</uriMap:MappingContainer>

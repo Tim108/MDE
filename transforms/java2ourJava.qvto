@@ -1,0 +1,44 @@
+modeltype JAVA uses 'http://www.eclipse.org/MoDisco/Java/0.2.incubation/java';
+modeltype ourJava uses 'http://www.example.org/ourjava';
+
+transformation java2ourJava(in java : JAVA, out ourJava);
+
+main()  {
+  //java.rootObjects()[Model]->asOrderedSet()->first()-> map Model2Root();
+  java -> objectsOfType(java::Model) -> asOrderedSet() -> first() -> map transformModel2Root();
+  java -> objectsOfType(java::Package) -> asOrderedSet() -> first() -> map transformPackage();
+  java -> objectsOfType(java::InterfaceDeclaration) -> asOrderedSet() -> first() -> map transformInterface();
+  java -> objectsOfType(java::ClassDeclaration) -> asOrderedSet() -> first() -> map transformClass();
+  java -> objectsOfType(java::ClassDeclaration) -> asOrderedSet() -> first() -> map transformImport();
+}
+
+mapping java::Model::transformModel2Root() : ourJava::Root{
+	name := self.name;
+}
+
+mapping java::Package::transformPackage() : ourJava::Package{
+	name := self.name;
+	subPackage := self.ownedPackages -> map transformPackage();
+	root := self.model.resolveone(ourJava::Root);
+}
+
+mapping java::InterfaceDeclaration::transformInterface() : ourJava::Interface{
+	name := self.name;
+	package := self.package.resolveone(ourJava::Package);
+}
+
+mapping java::ClassDeclaration::transformClass() : ourJava::Class{
+	name := self.name;
+	package := self.package.resolveone(ourJava::Package);
+		
+}
+
+mapping java::ClassDeclaration::transformImport(){
+	init{
+	}
+	// := self.originalCompilationUnit.imports -> forEach(i | i.resolveIn(i.importedElement.oc));
+}
+
+
+
+
