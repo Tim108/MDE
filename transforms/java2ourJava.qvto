@@ -9,7 +9,6 @@ main()  {
   java -> objectsOfType(java::Package) -> asOrderedSet() -> first() -> map transformPackage();
   java -> objectsOfType(java::InterfaceDeclaration) -> asOrderedSet() -> first() -> map transformInterface();
   java -> objectsOfType(java::ClassDeclaration) -> asOrderedSet() -> first() -> map transformClass();
-  java -> objectsOfType(java::ClassDeclaration) -> asOrderedSet() -> first() -> map transformImport();
 }
 
 mapping java::Model::transformModel2Root() : ourJava::Root{
@@ -28,16 +27,29 @@ mapping java::InterfaceDeclaration::transformInterface() : ourJava::Interface{
 }
 
 mapping java::ClassDeclaration::transformClass() : ourJava::Class{
+	init{
+		var classes : Set(java::ClassDeclaration) := java -> objectsOfType(java::ClassDeclaration) -> asOrderedSet() -> first();
+	}
 	name := self.name;
 	package := self.package.resolveone(ourJava::Package);
-		
+	
+	//use late resolve to do it after the transformation --> for imports	
+	//var importedClasses : Set(java::ClassDeclaration) := self.originalCompilationUnit.imports -> collect(i | i.importedElement.oclAsType(java::ClassDeclaration)) -> asSet();
+	
+	var importedNamedElement : Set(java::NamedElement) := self.originalCompilationUnit.imports -> collect(i | i.importedElement) -> asSet();
+	var importedClasses : Set(java::ClassDeclaration) := importedNamedElement -> selectByType(java::ClassDeclaration);
+	//importedClasses -> forEach(c){imports := c.late resolve(ourJava::Class)};
+	
+	imports := importedClasses -> map makeImport();
 }
 
-mapping java::ClassDeclaration::transformImport(){
-	init{
-	}
-	// := self.originalCompilationUnit.imports -> forEach(i | i.resolveIn(i.importedElement.oc));
+mapping java::ClassDeclaration::makeImport() : ourJava::Import{
+	importedClass := self.late resolveone(ourJava::Class);
 }
+
+
+
+
 
 
 

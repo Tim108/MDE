@@ -28,11 +28,15 @@
         eOpposite="#//Package/ownedClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="class" eType="#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
-        eType="#//Class"/>
+        eType="#//Import" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Root">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPackage" upperBound="-1"
         eType="#//Package" containment="true" eOpposite="#//Package/root"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedClass" lowerBound="1"
+        eType="#//Class"/>
   </eClassifiers>
 </ecore:EPackage>
