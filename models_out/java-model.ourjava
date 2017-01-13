@@ -4,102 +4,9 @@
     <ownedPackage name="nl">
       <subPackage name="ecci">
         <subPackage name="hamers">
-          <subPackage name="users">
-            <ownedClass name="UserListAdapter"/>
-            <ownedClass name="User"/>
-            <ownedClass name="UserFragmentPagerAdapter">
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@ownedClass.1"/>
-            </ownedClass>
-            <ownedClass name="SingleUserActivity">
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@ownedClass.2"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.1"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.1/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.6"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.6/@ownedClass.0"/>
-            </ownedClass>
-            <ownedClass name="UserFragment">
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.6/@ownedClass.1"/>
-            </ownedClass>
-            <ownedClass name="UserListFragment"/>
-          </subPackage>
-          <subPackage name="meetings">
-            <ownedClass name="Meeting"/>
-            <ownedClass name="NewMeetingActivity">
-              <imports importedClass="/0/@ownedPackage.2/@subPackage.1/@ownedClass.3"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.5"/>
-              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.5"/>
-              <imports importedClass="/0/@ownedPackage.2/@subPackage.4/@ownedClass.8"/>
-            </ownedClass>
-            <ownedClass name="SingleMeetingActivity"/>
-            <ownedClass name="MeetingAdapter"/>
-            <ownedClass name="MeetingFragment"/>
-          </subPackage>
-          <subPackage name="news">
-            <ownedClass name="News"/>
-            <ownedClass name="NewsFragment"/>
-            <ownedClass name="NewNewsActivity">
-              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.7"/>
-            </ownedClass>
-            <ownedClass name="NewsAdapter"/>
-          </subPackage>
           <subPackage name="stickers">
             <ownedClass name="Sticker"/>
             <ownedClass name="StickerFragment"/>
-          </subPackage>
-          <subPackage name="helpers">
-            <ownedClass name="Utils">
-              <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.2"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.0/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.2/@subPackage.2/@ownedClass.5"/>
-              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.4"/>
-            </ownedClass>
-            <ownedClass name="DividerItemDecoration">
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.6/@subPackage.0/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.6/@ownedClass.3"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@subPackage.1/@ownedClass.1"/>
-            </ownedClass>
-            <ownedClass name="HamersFragment"/>
-            <ownedClass name="TimePickerFragment">
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.3/@ownedClass.8"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.8/@subPackage.0/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.12"/>
-            </ownedClass>
-            <ownedClass name="AnimateFirstDisplayListener">
-              <imports importedClass="/0/@ownedPackage.2/@subPackage.4/@ownedClass.9"/>
-            </ownedClass>
-            <ownedClass name="DatePickerFragment">
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.3/@ownedClass.9"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.13"/>
-            </ownedClass>
-            <ownedClass name="HamersActivity"/>
-            <ownedClass name="NewItemActivity">
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.5/@subPackage.0/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.5/@subPackage.0/@ownedClass.1"/>
-            </ownedClass>
-            <ownedClass name="ScrollAwareFABBehavior"/>
-            <ownedClass name="SingleImageActivity">
-              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.3"/>
-            </ownedClass>
-          </subPackage>
-          <subPackage name="events">
-            <ownedClass name="EventListAdapter"/>
-            <ownedClass name="EventListFragment"/>
-            <ownedClass name="EventFragment"/>
-            <ownedClass name="NewEventActivity">
-              <imports importedClass="/0/@ownedPackage.2/@subPackage.1/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.3"/>
-            </ownedClass>
-            <ownedClass name="Event"/>
-            <ownedClass name="SingleEventActivity">
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.10"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.9/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@ownedClass.5"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.6"/>
-            </ownedClass>
-            <ownedClass name="EventFragmentPagerAdapter"/>
           </subPackage>
           <subPackage name="beers">
             <ownedClass name="NewBeerActivity"/>
@@ -107,70 +14,173 @@
             <ownedClass name="Review"/>
             <ownedClass name="Beer"/>
             <ownedClass name="NewReviewActivity">
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.7"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.7" test="SeekBar"/>
             </ownedClass>
             <ownedClass name="BeerAdapter"/>
             <ownedClass name="SingleBeerActivity">
-              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.9"/>
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.9" test="SingleImageActivity"/>
+              <imports importedInterface="/0/@ownedPackage.1/@subPackage.10/@ownedInterface.4" test="ContextMenu"/>
             </ownedClass>
+          </subPackage>
+          <subPackage name="meetings">
+            <ownedClass name="Meeting"/>
+            <ownedClass name="NewMeetingActivity">
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.1/@ownedClass.3" test="SimpleDateFormat"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.5" test="Button"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.8" test="Calendar"/>
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.5" test="DatePickerFragment"/>
+            </ownedClass>
+            <ownedClass name="SingleMeetingActivity"/>
+            <ownedClass name="MeetingAdapter"/>
+            <ownedClass name="MeetingFragment"/>
+          </subPackage>
+          <subPackage name="events">
+            <ownedClass name="EventListAdapter"/>
+            <ownedClass name="EventListFragment"/>
+            <ownedClass name="EventFragment"/>
+            <ownedClass name="NewEventActivity">
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.3" test="TimePickerFragment"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.1/@ownedClass.0" test="DateFormat"/>
+            </ownedClass>
+            <ownedClass name="Event"/>
+            <ownedClass name="SingleEventActivity">
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.6" test="LinearLayout"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.1/@ownedClass.0" test="CalendarContract"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.10" test="ScrollView"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.12/@ownedClass.5" test="ContentUris"/>
+            </ownedClass>
+            <ownedClass name="EventFragmentPagerAdapter"/>
+          </subPackage>
+          <subPackage name="users">
+            <ownedClass name="UserListAdapter"/>
+            <ownedClass name="User"/>
+            <ownedClass name="UserFragmentPagerAdapter">
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.12/@ownedClass.1" test="Context"/>
+            </ownedClass>
+            <ownedClass name="SingleUserActivity">
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.1" test="TextView"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.0" test="ImageView"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.4/@ownedClass.0" test="Bitmap"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.2/@ownedClass.0" test="Uri"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.12/@ownedClass.2" test="Intent"/>
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.6" test="HamersActivity"/>
+            </ownedClass>
+            <ownedClass name="UserFragment">
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.4/@ownedClass.1" test="Color"/>
+            </ownedClass>
+            <ownedClass name="UserListFragment"/>
           </subPackage>
           <subPackage name="loader">
             <ownedClass name="Singleton"/>
             <ownedClass name="Loader">
-              <imports importedClass="/0/@ownedPackage.2/@subPackage.4/@ownedClass.2"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.4/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.2"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.2" test="HashMap"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.2" test="Toast"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.3/@ownedClass.0" test="Log"/>
+              <imports importedInterface="/0/@ownedPackage.2/@subPackage.3/@ownedInterface.0" test="Map"/>
+              <imports importedInterface="/0/@ownedPackage.1/@subPackage.12/@ownedInterface.0" test="SharedPreferences"/>
             </ownedClass>
             <ownedInterface name="GetCallback"/>
             <ownedInterface name="PostCallback"/>
           </subPackage>
-          <subPackage name="gcm">
-            <ownedClass name="MyInstanceIDListenerService"/>
-            <ownedClass name="MyGcmListenerService">
-              <imports importedClass="/0/@ownedPackage.3/@subPackage.1/@ownedClass.2"/>
-              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.6"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.6/@ownedClass.2"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.3/@ownedClass.3"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.2/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.3/@ownedClass.4"/>
-              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.5"/>
+          <subPackage name="helpers">
+            <ownedClass name="Utils">
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.9/@ownedClass.0" test="PreferenceManager"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.2/@ownedClass.0" test="MessageDigest"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.0/@ownedClass.5" test="UnsupportedEncodingException"/>
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.4" test="Event"/>
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.2/@ownedClass.0" test="Meeting"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.2/@ownedClass.2" test="NoSuchAlgorithmException"/>
+              <imports importedInterface="/0/@ownedPackage.1/@subPackage.5/@ownedInterface.0" test="Editable"/>
             </ownedClass>
-            <ownedClass name="RegistrationIntentService">
-              <imports importedClass="/0/@ownedPackage.2/@subPackage.2/@ownedClass.4"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.3/@ownedClass.6"/>
+            <ownedClass name="DividerItemDecoration">
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.12/@subPackage.0/@ownedClass.1" test="TypedArray"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.4/@subPackage.0/@ownedClass.0" test="Drawable"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.4/@ownedClass.3" test="Canvas"/>
+            </ownedClass>
+            <ownedClass name="HamersFragment"/>
+            <ownedClass name="TimePickerFragment">
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.12" test="TimePicker"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.8/@ownedClass.8" test="TimePickerDialog"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.5/@subPackage.0/@ownedClass.0" test="DateFormat"/>
+            </ownedClass>
+            <ownedClass name="AnimateFirstDisplayListener">
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.9" test="LinkedList"/>
+              <imports importedInterface="/0/@ownedPackage.2/@subPackage.3/@ownedInterface.3" test="List"/>
+            </ownedClass>
+            <ownedClass name="DatePickerFragment">
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.8/@ownedClass.9" test="DatePickerDialog"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.13" test="DatePicker"/>
+            </ownedClass>
+            <ownedClass name="HamersActivity"/>
+            <ownedClass name="NewItemActivity">
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@subPackage.1/@ownedClass.0" test="Animation"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@subPackage.1/@ownedClass.1" test="AnimationUtils"/>
+            </ownedClass>
+            <ownedClass name="ScrollAwareFABBehavior">
+              <imports importedInterface="/0/@ownedPackage.1/@subPackage.3/@ownedInterface.0" test="AttributeSet"/>
+            </ownedClass>
+            <ownedClass name="SingleImageActivity">
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.3" test="Beer"/>
             </ownedClass>
           </subPackage>
           <subPackage name="quotes">
             <ownedClass name="Quote"/>
             <ownedClass name="QuoteFragment"/>
             <ownedClass name="NewQuoteFragment">
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.3/@ownedClass.2"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.3/@ownedClass.1"/>
-              <imports importedClass="/0/@ownedPackage.3/@subPackage.1/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.3"/>
-              <imports importedClass="/0/@ownedPackage.3/@subPackage.1/@ownedClass.1"/>
-              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
-              <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.16"/>
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.0" test="Utils"/>
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@ownedClass.1" test="JSONObject"/>
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@ownedClass.0" test="JSONException"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.8/@ownedClass.2" test="Dialog"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.8/@ownedClass.1" test="AlertDialog"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.16" test="Spinner"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.3" test="EditText"/>
+              <imports importedInterface="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.5/@ownedInterface.1" test="PostCallback"/>
+              <imports importedInterface="/0/@ownedPackage.1/@subPackage.12/@ownedInterface.1" test="DialogInterface"/>
             </ownedClass>
             <ownedClass name="QuoteAdapter"/>
           </subPackage>
+          <subPackage name="gcm">
+            <ownedClass name="MyInstanceIDListenerService"/>
+            <ownedClass name="MyGcmListenerService">
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.8/@ownedClass.3" test="NotificationManager"/>
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5" test="SingleEventActivity"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.0/@ownedClass.0" test="RingtoneManager"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.8/@ownedClass.4" test="PendingIntent"/>
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@ownedClass.2" test="JSONArray"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.4/@ownedClass.2" test="BitmapFactory"/>
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.6" test="SingleBeerActivity"/>
+              <imports importedInterface="/0/@ownedPackage.2/@subPackage.3/@ownedInterface.1" test="Set"/>
+            </ownedClass>
+            <ownedClass name="RegistrationIntentService">
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.8/@ownedClass.6" test="IntentService"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.0/@ownedClass.4" test="IOException"/>
+            </ownedClass>
+          </subPackage>
+          <subPackage name="news">
+            <ownedClass name="News"/>
+            <ownedClass name="NewsFragment"/>
+            <ownedClass name="NewNewsActivity">
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.7" test="NewItemActivity"/>
+            </ownedClass>
+            <ownedClass name="NewsAdapter"/>
+          </subPackage>
           <ownedClass name="BuildConfig"/>
           <ownedClass name="MainActivity">
-            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.4"/>
-            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.4"/>
-            <imports importedClass="/0/@ownedPackage.2/@subPackage.2/@ownedClass.0"/>
-            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.2"/>
-            <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.2"/>
-            <imports importedClass="/0/@ownedPackage.2/@subPackage.1/@ownedClass.2"/>
-            <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@ownedClass.0"/>
-            <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@ownedClass.3"/>
-            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.2/@ownedClass.1"/>
-            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2"/>
-            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.1"/>
-            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.1"/>
-            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.1"/>
-            <imports importedClass="/0/@ownedPackage.1/@subPackage.5/@subPackage.1/@ownedClass.0"/>
-            <imports importedClass="/0/@ownedPackage.2/@subPackage.4/@ownedClass.1"/>
+            <imports importedClass="/0/@ownedPackage.2/@subPackage.0/@ownedClass.0" test="File"/>
+            <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@subPackage.0/@ownedClass.0" test="InputMethodManager"/>
+            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.1" test="NewsFragment"/>
+            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.1" test="StickerFragment"/>
+            <imports importedClass="/0/@ownedPackage.1/@subPackage.12/@ownedClass.3" test="IntentFilter"/>
+            <imports importedClass="/0/@ownedPackage.1/@subPackage.6/@ownedClass.2" test="Handler"/>
+            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2" test="RegistrationIntentService"/>
+            <imports importedClass="/0/@ownedPackage.2/@subPackage.1/@ownedClass.2" test="ParseException"/>
+            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.4" test="UserFragment"/>
+            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.1" test="BeerFragment"/>
+            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.2" test="EventFragment"/>
+            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.2/@ownedClass.4" test="MeetingFragment"/>
+            <imports importedClass="/0/@ownedPackage.1/@subPackage.12/@ownedClass.0" test="BroadcastReceiver"/>
+            <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.7/@ownedClass.1" test="QuoteFragment"/>
+            <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.1" test="Locale"/>
           </ownedClass>
           <ownedClass name="AboutFragment"/>
           <ownedClass name="SettingsFragment"/>
@@ -178,57 +188,19 @@
       </subPackage>
     </ownedPackage>
     <ownedPackage name="android">
-      <subPackage name="preference">
-        <ownedClass name="PreferenceManager"/>
-      </subPackage>
-      <subPackage name="net">
-        <ownedClass name="Uri"/>
-      </subPackage>
       <subPackage name="media">
         <ownedClass name="RingtoneManager"/>
       </subPackage>
-      <subPackage name="app">
-        <ownedClass name="Activity"/>
-        <ownedClass name="AlertDialog"/>
-        <ownedClass name="Dialog"/>
-        <ownedClass name="NotificationManager"/>
-        <ownedClass name="PendingIntent"/>
-        <ownedClass name="Notification"/>
-        <ownedClass name="IntentService"/>
-        <ownedClass name="Service"/>
-        <ownedClass name="TimePickerDialog"/>
-        <ownedClass name="DatePickerDialog"/>
+      <subPackage name="provider">
+        <ownedClass name="CalendarContract"/>
+      </subPackage>
+      <subPackage name="net">
+        <ownedClass name="Uri"/>
       </subPackage>
       <subPackage name="util">
         <ownedClass name="Log"/>
         <ownedClass name="AndroidException"/>
         <ownedInterface name="AttributeSet"/>
-      </subPackage>
-      <subPackage name="view">
-        <subPackage name="animation">
-          <ownedClass name="Animation"/>
-          <ownedClass name="AnimationUtils"/>
-        </subPackage>
-        <subPackage name="inputmethod">
-          <ownedClass name="InputMethodManager"/>
-        </subPackage>
-        <subPackage name="accessibility">
-          <ownedInterface name="AccessibilityEventSource"/>
-        </subPackage>
-        <ownedClass name="View"/>
-        <ownedClass name="KeyEvent"/>
-        <ownedClass name="InputEvent"/>
-        <ownedClass name="ViewTreeObserver"/>
-        <ownedClass name="LayoutInflater"/>
-        <ownedClass name="MenuInflater"/>
-        <ownedClass name="ViewGroup"/>
-        <ownedClass name="ContextThemeWrapper"/>
-        <ownedClass name="Window"/>
-        <ownedInterface name="MenuItem"/>
-        <ownedInterface name="Menu"/>
-        <ownedInterface name="ViewParent"/>
-        <ownedInterface name="ViewManager"/>
-        <ownedInterface name="ContextMenu"/>
       </subPackage>
       <subPackage name="graphics">
         <subPackage name="drawable">
@@ -238,14 +210,6 @@
         <ownedClass name="Color"/>
         <ownedClass name="BitmapFactory"/>
         <ownedClass name="Canvas"/>
-      </subPackage>
-      <subPackage name="os">
-        <ownedClass name="Bundle"/>
-        <ownedClass name="BaseBundle"/>
-        <ownedClass name="Handler"/>
-        <ownedClass name="AsyncTask"/>
-        <ownedInterface name="Parcelable"/>
-        <ownedInterface name="IBinder"/>
       </subPackage>
       <subPackage name="text">
         <subPackage name="format">
@@ -258,28 +222,13 @@
         <ownedInterface name="TextWatcher"/>
         <ownedInterface name="NoCopySpan"/>
       </subPackage>
-      <subPackage name="provider">
-        <ownedClass name="CalendarContract"/>
-      </subPackage>
-      <subPackage name="content">
-        <subPackage name="pm">
-          <ownedClass name="PackageManager"/>
-          <ownedClass name="PackageInfo"/>
-        </subPackage>
-        <subPackage name="res">
-          <ownedClass name="Resources"/>
-          <ownedClass name="TypedArray"/>
-        </subPackage>
-        <ownedClass name="BroadcastReceiver"/>
-        <ownedClass name="Context"/>
-        <ownedClass name="Intent"/>
-        <ownedClass name="IntentFilter"/>
-        <ownedClass name="ContextWrapper"/>
-        <ownedClass name="ContentUris"/>
-        <ownedInterface name="SharedPreferences"/>
-        <ownedInterface name="DialogInterface"/>
-        <ownedInterface name="ComponentCallbacks2"/>
-        <ownedInterface name="ComponentCallbacks"/>
+      <subPackage name="os">
+        <ownedClass name="Bundle"/>
+        <ownedClass name="BaseBundle"/>
+        <ownedClass name="Handler"/>
+        <ownedClass name="AsyncTask"/>
+        <ownedInterface name="Parcelable"/>
+        <ownedInterface name="IBinder"/>
       </subPackage>
       <subPackage name="widget">
         <ownedClass name="ImageView"/>
@@ -309,11 +258,116 @@
         <ownedInterface name="SpinnerAdapter"/>
         <ownedInterface name="ThemedSpinnerAdapter"/>
       </subPackage>
+      <subPackage name="app">
+        <ownedClass name="Activity"/>
+        <ownedClass name="AlertDialog"/>
+        <ownedClass name="Dialog"/>
+        <ownedClass name="NotificationManager"/>
+        <ownedClass name="PendingIntent"/>
+        <ownedClass name="Notification"/>
+        <ownedClass name="IntentService"/>
+        <ownedClass name="Service"/>
+        <ownedClass name="TimePickerDialog"/>
+        <ownedClass name="DatePickerDialog"/>
+      </subPackage>
+      <subPackage name="preference">
+        <ownedClass name="PreferenceManager"/>
+      </subPackage>
+      <subPackage name="view">
+        <subPackage name="inputmethod">
+          <ownedClass name="InputMethodManager"/>
+        </subPackage>
+        <subPackage name="animation">
+          <ownedClass name="Animation"/>
+          <ownedClass name="AnimationUtils"/>
+        </subPackage>
+        <subPackage name="accessibility">
+          <ownedInterface name="AccessibilityEventSource"/>
+        </subPackage>
+        <ownedClass name="View"/>
+        <ownedClass name="KeyEvent"/>
+        <ownedClass name="InputEvent"/>
+        <ownedClass name="ViewTreeObserver"/>
+        <ownedClass name="LayoutInflater"/>
+        <ownedClass name="MenuInflater"/>
+        <ownedClass name="ViewGroup"/>
+        <ownedClass name="ContextThemeWrapper"/>
+        <ownedClass name="Window"/>
+        <ownedInterface name="MenuItem"/>
+        <ownedInterface name="Menu"/>
+        <ownedInterface name="ViewParent"/>
+        <ownedInterface name="ViewManager"/>
+        <ownedInterface name="ContextMenu"/>
+      </subPackage>
       <subPackage name="annotation"/>
+      <subPackage name="content">
+        <subPackage name="res">
+          <ownedClass name="Resources"/>
+          <ownedClass name="TypedArray"/>
+        </subPackage>
+        <subPackage name="pm">
+          <ownedClass name="PackageManager"/>
+          <ownedClass name="PackageInfo"/>
+        </subPackage>
+        <ownedClass name="BroadcastReceiver"/>
+        <ownedClass name="Context"/>
+        <ownedClass name="Intent"/>
+        <ownedClass name="IntentFilter"/>
+        <ownedClass name="ContextWrapper"/>
+        <ownedClass name="ContentUris"/>
+        <ownedInterface name="SharedPreferences"/>
+        <ownedInterface name="DialogInterface"/>
+        <ownedInterface name="ComponentCallbacks2"/>
+        <ownedInterface name="ComponentCallbacks"/>
+      </subPackage>
       <ownedClass name="R"/>
       <ownedClass name="Manifest"/>
     </ownedPackage>
     <ownedPackage name="java">
+      <subPackage name="io">
+        <ownedClass name="File"/>
+        <ownedClass name="PrintStream"/>
+        <ownedClass name="FilterOutputStream"/>
+        <ownedClass name="OutputStream"/>
+        <ownedClass name="IOException"/>
+        <ownedClass name="UnsupportedEncodingException"/>
+        <ownedInterface name="Serializable"/>
+        <ownedInterface name="Closeable"/>
+        <ownedInterface name="Flushable"/>
+      </subPackage>
+      <subPackage name="text">
+        <ownedClass name="DateFormat"/>
+        <ownedClass name="Format"/>
+        <ownedClass name="ParseException"/>
+        <ownedClass name="SimpleDateFormat"/>
+      </subPackage>
+      <subPackage name="security">
+        <ownedClass name="MessageDigest"/>
+        <ownedClass name="MessageDigestSpi"/>
+        <ownedClass name="NoSuchAlgorithmException"/>
+        <ownedClass name="GeneralSecurityException"/>
+      </subPackage>
+      <subPackage name="util">
+        <ownedClass name="Date"/>
+        <ownedClass name="Locale"/>
+        <ownedClass name="HashMap"/>
+        <ownedClass name="AbstractMap"/>
+        <ownedClass name="ArrayList"/>
+        <ownedClass name="AbstractList"/>
+        <ownedClass name="AbstractCollection"/>
+        <ownedClass name="Collections"/>
+        <ownedClass name="Calendar"/>
+        <ownedClass name="LinkedList"/>
+        <ownedClass name="AbstractSequentialList"/>
+        <ownedInterface name="Map"/>
+        <ownedInterface name="Set"/>
+        <ownedInterface name="Collection"/>
+        <ownedInterface name="List"/>
+        <ownedInterface name="RandomAccess"/>
+        <ownedInterface name="Comparator"/>
+        <ownedInterface name="Deque"/>
+        <ownedInterface name="Queue"/>
+      </subPackage>
       <subPackage name="lang">
         <subPackage name="reflect">
           <ownedInterface name="GenericDeclaration"/>
@@ -343,61 +397,17 @@
         <ownedInterface name="Appendable"/>
         <ownedInterface name="Iterable"/>
       </subPackage>
-      <subPackage name="text">
-        <ownedClass name="DateFormat"/>
-        <ownedClass name="Format"/>
-        <ownedClass name="ParseException"/>
-        <ownedClass name="SimpleDateFormat"/>
-      </subPackage>
-      <subPackage name="io">
-        <ownedClass name="File"/>
-        <ownedClass name="PrintStream"/>
-        <ownedClass name="FilterOutputStream"/>
-        <ownedClass name="OutputStream"/>
-        <ownedClass name="IOException"/>
-        <ownedClass name="UnsupportedEncodingException"/>
-        <ownedInterface name="Serializable"/>
-        <ownedInterface name="Closeable"/>
-        <ownedInterface name="Flushable"/>
-      </subPackage>
-      <subPackage name="security">
-        <ownedClass name="MessageDigest"/>
-        <ownedClass name="MessageDigestSpi"/>
-        <ownedClass name="NoSuchAlgorithmException"/>
-        <ownedClass name="GeneralSecurityException"/>
-      </subPackage>
-      <subPackage name="util">
-        <ownedClass name="Date"/>
-        <ownedClass name="Locale"/>
-        <ownedClass name="HashMap"/>
-        <ownedClass name="AbstractMap"/>
-        <ownedClass name="ArrayList"/>
-        <ownedClass name="AbstractList"/>
-        <ownedClass name="AbstractCollection"/>
-        <ownedClass name="Collections"/>
-        <ownedClass name="Calendar"/>
-        <ownedClass name="LinkedList"/>
-        <ownedClass name="AbstractSequentialList"/>
-        <ownedInterface name="Map"/>
-        <ownedInterface name="Set"/>
-        <ownedInterface name="Collection"/>
-        <ownedInterface name="List"/>
-        <ownedInterface name="RandomAccess"/>
-        <ownedInterface name="Comparator"/>
-        <ownedInterface name="Deque"/>
-        <ownedInterface name="Queue"/>
-      </subPackage>
     </ownedPackage>
     <ownedPackage name="org">
-      <subPackage name="xmlpull">
-        <subPackage name="v1">
-          <ownedInterface name="XmlPullParser"/>
-        </subPackage>
-      </subPackage>
       <subPackage name="json">
         <ownedClass name="JSONException"/>
         <ownedClass name="JSONObject"/>
         <ownedClass name="JSONArray"/>
+      </subPackage>
+      <subPackage name="xmlpull">
+        <subPackage name="v1">
+          <ownedInterface name="XmlPullParser"/>
+        </subPackage>
       </subPackage>
     </ownedPackage>
   </ourjava:Root>
@@ -427,43 +437,49 @@
   <ourjava:Class name="populateList"/>
   <ourjava:Class name="Signup"/>
   <ourjava:Class name="ViewHolder">
-    <imports importedClass="/0/@ownedPackage.1/@subPackage.3/@ownedClass.0"/>
+    <imports importedClass="/0/@ownedPackage.1/@subPackage.8/@ownedClass.0" test="Activity"/>
   </ourjava:Class>
   <ourjava:Class name="populateList"/>
   <ourjava:Class name="populateList"/>
   <ourjava:Class name="ViewHolder"/>
   <ourjava:Class name="populateList"/>
   <ourjava:Class name="ViewHolder">
-    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.3"/>
-    <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.4"/>
-    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.3" test="SingleUserActivity"/>
+    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.1" test="User"/>
+    <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.4" test="Filter"/>
+    <imports importedInterface="/0/@ownedPackage.1/@subPackage.7/@ownedInterface.0" test="Filterable"/>
   </ourjava:Class>
   <ourjava:Class name="populateMap">
-    <imports importedClass="/0/@ownedPackage.1/@ownedClass.1"/>
-    <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@subPackage.0/@ownedClass.0"/>
+    <imports importedClass="/0/@ownedPackage.1/@ownedClass.1" test="Manifest"/>
+    <imports importedClass="/0/@ownedPackage.1/@subPackage.12/@subPackage.1/@ownedClass.0" test="PackageManager"/>
   </ourjava:Class>
   <ourjava:Class name="ViewHolder">
-    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.4"/>
+    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.4" test="AnimateFirstDisplayListener"/>
   </ourjava:Class>
   <ourjava:Class name="Nickname">
-    <imports importedClass="/0/@ownedPackage.2/@subPackage.4/@ownedClass.0"/>
+    <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.0" test="Date"/>
   </ourjava:Class>
   <ourjava:Class name="populateList">
-    <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.20"/>
-    <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.14"/>
-    <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.0"/>
-    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.2"/>
-    <imports importedClass="/0/@ownedPackage.2/@subPackage.4/@ownedClass.4"/>
-    <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.3"/>
-    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.1"/>
-    <imports importedClass="/0/@ownedPackage.1/@subPackage.5/@ownedClass.0"/>
-    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.7/@ownedClass.1"/>
-    <imports importedClass="/0/@ownedPackage.1/@subPackage.5/@ownedClass.5"/>
-    <imports importedClass="/0/@ownedPackage.1/@subPackage.5/@ownedClass.4"/>
-    <imports importedClass="/0/@ownedPackage.1/@subPackage.5/@ownedClass.6"/>
-    <imports importedClass="/0/@ownedPackage.2/@subPackage.4/@ownedClass.7"/>
-    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@ownedClass.1"/>
-    <imports importedClass="/0/@ownedPackage.1/@subPackage.11/@ownedClass.19"/>
+    <imports importedClass="/0/@ownedPackage.1/@subPackage.6/@ownedClass.3" test="AsyncTask"/>
+    <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.4" test="ArrayList"/>
+    <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.14" test="ArrayAdapter"/>
+    <imports importedClass="/0/@ownedPackage.1/@subPackage.6/@ownedClass.0" test="Bundle"/>
+    <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.7" test="Collections"/>
+    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.2" test="HamersFragment"/>
+    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.1" test="Loader"/>
+    <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@ownedClass.0" test="View"/>
+    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.1" test="DividerItemDecoration"/>
+    <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.19" test="AbsListView"/>
+    <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@ownedClass.4" test="LayoutInflater"/>
+    <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@ownedClass.1" test="MainActivity"/>
+    <imports importedClass="/0/@ownedPackage.1/@subPackage.7/@ownedClass.20" test="ListView"/>
+    <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@ownedClass.5" test="MenuInflater"/>
+    <imports importedClass="/0/@ownedPackage.1/@subPackage.10/@ownedClass.6" test="ViewGroup"/>
+    <imports importedInterface="/0/@ownedPackage.2/@subPackage.4/@subPackage.0/@ownedInterface.1" test="Type"/>
+    <imports importedInterface="/0/@ownedPackage.1/@subPackage.10/@ownedInterface.0" test="MenuItem"/>
+    <imports importedInterface="/0/@ownedPackage.1/@subPackage.10/@ownedInterface.1" test="Menu"/>
+    <imports importedInterface="/0/@ownedPackage.0/@subPackage.0/@subPackage.0/@subPackage.5/@ownedInterface.0" test="GetCallback"/>
+    <imports importedInterface="/0/@ownedPackage.2/@subPackage.3/@ownedInterface.5" test="Comparator"/>
   </ourjava:Class>
   <ourjava:Class name="id"/>
   <ourjava:Class name="string"/>

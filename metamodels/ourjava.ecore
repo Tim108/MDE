@@ -36,7 +36,8 @@
         eType="#//Package" containment="true" eOpposite="#//Package/root"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Import">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="importedClass" lowerBound="1"
-        eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedClass" eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedInterface" eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="test" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

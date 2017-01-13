@@ -33,18 +33,45 @@ mapping java::ClassDeclaration::transformClass() : ourJava::Class{
 	name := self.name;
 	package := self.package.resolveone(ourJava::Package);
 	
+	log(self.name);
+	
 	//use late resolve to do it after the transformation --> for imports	
-	//var importedClasses : Set(java::ClassDeclaration) := self.originalCompilationUnit.imports -> collect(i | i.importedElement.oclAsType(java::ClassDeclaration)) -> asSet();
-	
 	var importedNamedElement : Set(java::NamedElement) := self.originalCompilationUnit.imports -> collect(i | i.importedElement) -> asSet();
-	var importedClasses : Set(java::ClassDeclaration) := importedNamedElement -> selectByType(java::ClassDeclaration);
-	//importedClasses -> forEach(c){imports := c.late resolve(ourJava::Class)};
+	log("importedNamedElement");
+	importedNamedElement -> forEach(e){log(e.repr())};
+	log("/importedNamedElement");
 	
-	imports := importedClasses -> map makeImport();
+	log("importedClasses");
+	var importedClasses : Set(java::ClassDeclaration) := importedNamedElement -> selectByType(java::ClassDeclaration);
+	importedClasses -> forEach(e){log(e.repr())};
+	log("/importedClasses");
+	
+	log("importedInterfaces");
+	var importedInterfaces : Set(java::InterfaceDeclaration) := importedNamedElement -> selectByType(java::InterfaceDeclaration);
+	importedInterfaces -> forEach(e){log(e.repr())};
+	log("/importedInterfaces");
+	
+	//var importedUnresolvedItems : Set(java::UnresolvedItem) := importedNamedElement -> selectByType(java::UnresolvedItem);
+	
+	imports += importedClasses -> map makeImport();
+	imports += importedInterfaces -> map makeImport();
+	log("--- " + name + " ---------------------------------");
+	imports -> forEach(e){log(e.repr())};
+	log("--------------------------------------------------");
 }
 
 mapping java::ClassDeclaration::makeImport() : ourJava::Import{
 	importedClass := self.late resolveone(ourJava::Class);
+	test := self.name;
+}
+
+mapping java::InterfaceDeclaration::makeImport() : ourJava::Import{
+	importedInterface := self.late resolveone(ourJava::Interface);
+	test := self.name;
+}
+
+mapping java::ImportDeclaration::transformImports() : ourJava::Import{
+	
 }
 
 
