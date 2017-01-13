@@ -1,55 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mdeProject" nsURI="http://www.example.org/mdeProject" nsPrefix="mdeProject">
-  <eClassifiers xsi:type="ecore:EClass" name="Presenter">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="view" upperBound="-1" eType="#//View"
-        eOpposite="#//View/presenter"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"
-        eOpposite="#//Model/presenter"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="unspecifiedElement" upperBound="-1"
-        eType="#//UnspecifiedElement" eOpposite="#//UnspecifiedElement/presenter"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="presenter" upperBound="-1"
-        eType="#//Presenter" eOpposite="#//Presenter/model"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="view" upperBound="-1" eType="#//View"
-        eOpposite="#//View/model"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="unspecifiedElement" upperBound="-1"
-        eType="#//UnspecifiedElement" eOpposite="#//UnspecifiedElement/model"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="View">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="presenter" upperBound="-1"
-        eType="#//Presenter" eOpposite="#//Presenter/view"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="model" upperBound="-1"
-        eType="#//Model" eOpposite="#//Model/view"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="unspecifiedElement" upperBound="-1"
-        eType="#//UnspecifiedElement" eOpposite="#//UnspecifiedElement/view"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MainPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="Presenter" eSuperTypes="#//Class"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//Class"/>
+  <eClassifiers xsi:type="ecore:EClass" name="View" eSuperTypes="#//Class"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Root">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subpackage" upperBound="-1"
-        eType="#//SubPackage" containment="true"/>
+        eType="#//Package" containment="true" eOpposite="#//Package/roott"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SubPackage">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="presenter" upperBound="-1"
-        eType="#//Presenter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="model" upperBound="-1"
-        eType="#//Model" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Package">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subpackage" upperBound="-1"
-        eType="#//SubPackage" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="view" upperBound="-1" eType="#//View"
-        containment="true"/>
+        eType="#//Package" containment="true" eOpposite="#//Package/package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="#//Package"
+        eOpposite="#//Package/subpackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roott" eType="#//Root"
+        eOpposite="#//Root/subpackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" upperBound="-1"
+        eType="#//Class" containment="true" eOpposite="#//Class/package"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnspecifiedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="view" upperBound="-1" eType="#//View"
-        eOpposite="#//View/unspecifiedElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="model" upperBound="-1"
-        eType="#//Model" eOpposite="#//Model/unspecifiedElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="presenter" upperBound="-1"
-        eType="#//Presenter" eOpposite="#//Presenter/unspecifiedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnspecifiedClass" eSuperTypes="#//Class"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Class" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" upperBound="-1"
+        eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="#//Package"
+        eOpposite="#//Package/class"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

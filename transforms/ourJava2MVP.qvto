@@ -1,5 +1,25 @@
-transformation ourJava2MVP();
+modeltype OURJAVA uses 'http://www.example.org/ourjava';
+modeltype mvp uses 'http://www.example.org/mdeProject';
+
+transformation ourJava2MVP(in ourjava : OURJAVA, out mvp);
 
 main() {
+	ourjava -> objectsOfType(ourjava::Root) -> asOrderedSet() -> first() -> map transformRoot();
+	
+}
 
+mapping ourjava::Root::transformRoot() : mvp::Root{
+	name := self.name;
+	subpackage := self.ownedPackage -> map transformPackage();
+}
+
+mapping ourjava::Package::transformPackage() : mvp::Package{
+	name := self.name;
+	roott := self.root.resolveone(mvp::Root);
+	package := self.package.resolveone(mvp::Package);
+	subpackage := self.subPackage -> map transformPackage();
+}
+
+mapping ourjava::Class::transformClass(){
+	
 }

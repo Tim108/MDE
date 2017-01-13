@@ -6,19 +6,23 @@ transformation java2ourJava(in java : JAVA, out ourJava);
 main()  {
   //java.rootObjects()[Model]->asOrderedSet()->first()-> map Model2Root();
   java -> objectsOfType(java::Model) -> asOrderedSet() -> first() -> map transformModel2Root();
-  java -> objectsOfType(java::Package) -> asOrderedSet() -> first() -> map transformPackage();
-  java -> objectsOfType(java::InterfaceDeclaration) -> asOrderedSet() -> first() -> map transformInterface();
-  java -> objectsOfType(java::ClassDeclaration) -> asOrderedSet() -> first() -> map transformClass();
+  //java -> objectsOfType(java::Package) -> asOrderedSet() -> first() -> map transformPackage();
+  //java -> objectsOfType(java::InterfaceDeclaration) -> asOrderedSet() -> first() -> map transformInterface();
+  //java -> objectsOfType(java::ClassDeclaration) -> asOrderedSet() -> first() -> map transformClass();
 }
 
 mapping java::Model::transformModel2Root() : ourJava::Root{
 	name := self.name;
+	ownedPackage := self.ownedElements -> map transformPackage();
 }
 
 mapping java::Package::transformPackage() : ourJava::Package{
 	name := self.name;
 	subPackage := self.ownedPackages -> map transformPackage();
 	root := self.model.resolveone(ourJava::Root);
+	package := self.package.resolveone(ourJava::Package);
+	ownedClass := self.ownedElements.oclAsType(java::ClassDeclaration) -> map transformClass();
+	ownedInterface := self.ownedElements.oclAsType(java::InterfaceDeclaration) -> map transformInterface();
 }
 
 mapping java::InterfaceDeclaration::transformInterface() : ourJava::Interface{
