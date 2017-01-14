@@ -4,11 +4,7 @@ modeltype ourJava uses 'http://www.example.org/ourjava';
 transformation java2ourJava(in java : JAVA, out ourJava);
 
 main()  {
-  //java.rootObjects()[Model]->asOrderedSet()->first()-> map Model2Root();
   java -> objectsOfType(java::Model) -> asOrderedSet() -> first() -> map transformModel2Root();
-  //java -> objectsOfType(java::Package) -> asOrderedSet() -> first() -> map transformPackage();
-  //java -> objectsOfType(java::InterfaceDeclaration) -> asOrderedSet() -> first() -> map transformInterface();
-  //java -> objectsOfType(java::ClassDeclaration) -> asOrderedSet() -> first() -> map transformClass();
 }
 
 mapping java::Model::transformModel2Root() : ourJava::Root{
@@ -39,6 +35,10 @@ mapping java::ClassDeclaration::transformClass() : ourJava::Class{
 	
 	log(self.name);
 	
+	//################################################################################
+	//############### PROBLEEM #######################################################
+	//################################################################################
+	
 	//use late resolve to do it after the transformation --> for imports	
 	var importedNamedElement : Set(java::NamedElement) := self.originalCompilationUnit.imports -> collect(i | i.importedElement) -> asSet();
 	log("importedNamedElement");
@@ -62,20 +62,28 @@ mapping java::ClassDeclaration::transformClass() : ourJava::Class{
 	log("--- " + name + " ---------------------------------");
 	imports -> forEach(e){log(e.repr())};
 	log("--------------------------------------------------");
+	
+	//################################################################################
+	//############### EIND PROBLEEM ##################################################
+	//################################################################################
+	
+	method += self.bodyDeclarations -> selectByType(java::MethodDeclaration) -> map transformMethod(self);
+	
 }
 
 mapping java::ClassDeclaration::makeImport() : ourJava::Import{
 	importedClass := self.late resolveone(ourJava::Class);
-	test := self.name;
+	name := self.name;
 }
 
 mapping java::InterfaceDeclaration::makeImport() : ourJava::Import{
 	importedInterface := self.late resolveone(ourJava::Interface);
-	test := self.name;
+	name := self.name;
 }
 
-mapping java::ImportDeclaration::transformImports() : ourJava::Import{
-	
+mapping java::MethodDeclaration::transformMethod(owner : java::ClassDeclaration) : ourJava::Method{
+	name := self.name;
+	fromClass := owner.resolveone(ourJava::Class);
 }
 
 

@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdeProject:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdeProject="http://www.example.org/mdeProject" xsi:schemaLocation="http://www.example.org/mdeProject ../metamodels/ModelViewPresenter.ecore" name="HamersApp">
+  <subpackage name="org">
+    <subpackage name="json"/>
+    <subpackage name="xmlpull">
+      <subpackage name="v1"/>
+    </subpackage>
+  </subpackage>
   <subpackage name="java">
+    <subpackage name="util"/>
     <subpackage name="lang">
       <subpackage name="reflect"/>
     </subpackage>
     <subpackage name="text"/>
     <subpackage name="io"/>
     <subpackage name="security"/>
-    <subpackage name="util"/>
   </subpackage>
   <subpackage name="android">
-    <subpackage name="os"/>
-    <subpackage name="widget"/>
-    <subpackage name="net"/>
-    <subpackage name="util"/>
+    <subpackage name="media"/>
     <subpackage name="text">
       <subpackage name="format"/>
     </subpackage>
-    <subpackage name="media"/>
-    <subpackage name="view">
-      <subpackage name="accessibility"/>
-      <subpackage name="animation"/>
-      <subpackage name="inputmethod"/>
-    </subpackage>
-    <subpackage name="annotation"/>
+    <subpackage name="net"/>
     <subpackage name="graphics">
       <subpackage name="drawable"/>
     </subpackage>
-    <subpackage name="app"/>
-    <subpackage name="provider"/>
+    <subpackage name="annotation"/>
+    <subpackage name="os"/>
     <subpackage name="content">
-      <subpackage name="res"/>
       <subpackage name="pm"/>
+      <subpackage name="res"/>
     </subpackage>
     <subpackage name="preference"/>
-  </subpackage>
-  <subpackage name="org">
-    <subpackage name="xmlpull">
-      <subpackage name="v1"/>
+    <subpackage name="util"/>
+    <subpackage name="view">
+      <subpackage name="accessibility"/>
+      <subpackage name="inputmethod"/>
+      <subpackage name="animation"/>
     </subpackage>
-    <subpackage name="json"/>
+    <subpackage name="app"/>
+    <subpackage name="widget"/>
+    <subpackage name="provider"/>
   </subpackage>
   <subpackage name="nl">
     <subpackage name="ecci">
       <subpackage name="hamers">
+        <subpackage name="meetings"/>
         <subpackage name="users"/>
+        <subpackage name="gcm"/>
         <subpackage name="beers"/>
+        <subpackage name="helpers"/>
+        <subpackage name="news"/>
+        <subpackage name="stickers"/>
         <subpackage name="loader"/>
         <subpackage name="events"/>
         <subpackage name="quotes"/>
-        <subpackage name="stickers"/>
-        <subpackage name="gcm"/>
-        <subpackage name="helpers"/>
-        <subpackage name="news"/>
-        <subpackage name="meetings"/>
       </subpackage>
     </subpackage>
   </subpackage>

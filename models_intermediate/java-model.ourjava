@@ -1,326 +1,610 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ourjava:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ourjava="http://www.example.org/ourjava" xsi:schemaLocation="http://www.example.org/ourjava ../metamodels/ourjava.ecore" name="HamersApp">
-  <ownedPackage name="java">
-    <subPackage name="lang">
-      <subPackage name="reflect">
-        <ownedInterface name="Type"/>
-        <ownedInterface name="AnnotatedElement"/>
-        <ownedInterface name="GenericDeclaration"/>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ourjava="http://www.example.org/ourjava" xsi:schemaLocation="http://www.example.org/ourjava ../metamodels/ourjava.ecore">
+  <ourjava:Root name="HamersApp">
+    <ownedPackage name="org">
+      <subPackage name="json">
+        <ownedClass name="JSONArray" method="/285 /286"/>
+        <ownedClass name="JSONObject" method="/279 /280 /281 /282 /283 /284"/>
+        <ownedClass name="JSONException"/>
       </subPackage>
-    </subPackage>
-    <subPackage name="text">
-      <ownedClass name="DateFormat"/>
-      <ownedClass name="SimpleDateFormat"/>
-      <ownedClass name="ParseException"/>
-      <ownedClass name="Format"/>
-    </subPackage>
-    <subPackage name="io"/>
-    <subPackage name="security">
-      <ownedClass name="NoSuchAlgorithmException"/>
-      <ownedClass name="GeneralSecurityException"/>
-      <ownedClass name="MessageDigestSpi"/>
-      <ownedClass name="MessageDigest"/>
-    </subPackage>
-    <subPackage name="util"/>
-  </ownedPackage>
-  <ownedPackage name="android">
-    <subPackage name="os"/>
-    <subPackage name="widget"/>
-    <subPackage name="net">
-      <ownedClass name="Uri"/>
-    </subPackage>
-    <subPackage name="util"/>
-    <subPackage name="text">
-      <subPackage name="format">
-        <ownedClass name="DateFormat"/>
-      </subPackage>
-      <ownedInterface name="Editable"/>
-      <ownedInterface name="TextWatcher"/>
-      <ownedInterface name="NoCopySpan"/>
-      <ownedInterface name="Spanned"/>
-      <ownedInterface name="GetChars"/>
-      <ownedInterface name="Spannable"/>
-    </subPackage>
-    <subPackage name="media">
-      <ownedClass name="RingtoneManager"/>
-    </subPackage>
-    <subPackage name="view">
-      <subPackage name="accessibility">
-        <ownedInterface name="AccessibilityEventSource"/>
-      </subPackage>
-      <subPackage name="animation">
-        <ownedClass name="Animation"/>
-        <ownedClass name="AnimationUtils"/>
-      </subPackage>
-      <subPackage name="inputmethod">
-        <ownedClass name="InputMethodManager"/>
-      </subPackage>
-    </subPackage>
-    <subPackage name="annotation"/>
-    <subPackage name="graphics">
-      <subPackage name="drawable">
-        <ownedClass name="Drawable"/>
-      </subPackage>
-      <ownedClass name="Bitmap"/>
-      <ownedClass name="BitmapFactory"/>
-      <ownedClass name="Canvas"/>
-      <ownedClass name="Color"/>
-    </subPackage>
-    <subPackage name="app">
-      <ownedClass name="DatePickerDialog"/>
-      <ownedClass name="NotificationManager"/>
-      <ownedClass name="TimePickerDialog"/>
-      <ownedClass name="Dialog"/>
-      <ownedClass name="Activity"/>
-      <ownedClass name="AlertDialog"/>
-      <ownedClass name="IntentService"/>
-      <ownedClass name="PendingIntent"/>
-      <ownedClass name="Service"/>
-      <ownedClass name="Notification"/>
-    </subPackage>
-    <subPackage name="provider">
-      <ownedClass name="CalendarContract"/>
-    </subPackage>
-    <subPackage name="content">
-      <subPackage name="res">
-        <ownedClass name="TypedArray"/>
-        <ownedClass name="Resources"/>
-      </subPackage>
-      <subPackage name="pm">
-        <ownedClass name="PackageInfo"/>
-        <ownedClass name="PackageManager"/>
-      </subPackage>
-    </subPackage>
-    <subPackage name="preference">
-      <ownedClass name="PreferenceManager"/>
-    </subPackage>
-    <ownedClass name="Manifest"/>
-    <ownedClass name="R"/>
-  </ownedPackage>
-  <ownedPackage name="org">
-    <subPackage name="xmlpull">
-      <subPackage name="v1">
-        <ownedInterface name="XmlPullParser"/>
-      </subPackage>
-    </subPackage>
-    <subPackage name="json">
-      <ownedClass name="JSONException"/>
-      <ownedClass name="JSONArray"/>
-      <ownedClass name="JSONObject"/>
-    </subPackage>
-  </ownedPackage>
-  <ownedPackage name="nl">
-    <subPackage name="ecci">
-      <subPackage name="hamers">
-        <subPackage name="users">
-          <ownedClass name="UserFragment"/>
-          <ownedClass name="UserFragmentPagerAdapter"/>
-          <ownedClass name="UserListAdapter"/>
-          <ownedClass name="SingleUserActivity"/>
-          <ownedClass name="User"/>
-          <ownedClass name="UserListFragment">
-            <imports test="AbsListView"/>
-            <imports test="ListView"/>
-            <imports test="Comparator"/>
-          </ownedClass>
+      <subPackage name="xmlpull">
+        <subPackage name="v1">
+          <ownedInterface name="XmlPullParser"/>
         </subPackage>
-        <subPackage name="beers">
-          <ownedClass name="NewBeerActivity"/>
-          <ownedClass name="Beer"/>
-          <ownedClass name="NewReviewActivity">
-            <imports test="SeekBar"/>
-          </ownedClass>
-          <ownedClass name="BeerFragment"/>
-          <ownedClass name="SingleBeerActivity">
-            <imports test="ContextMenu"/>
-          </ownedClass>
-          <ownedClass name="Review"/>
-          <ownedClass name="BeerAdapter">
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.7/@ownedClass.0" test="SingleImageActivity"/>
-          </ownedClass>
-        </subPackage>
-        <subPackage name="loader"/>
-        <subPackage name="events">
-          <ownedClass name="EventFragmentPagerAdapter"/>
-          <ownedClass name="EventFragment">
-            <imports importedClass="//@ownedPackage.1/@subPackage.8/@ownedClass.3" test="Color"/>
-          </ownedClass>
-          <ownedClass name="NewEventActivity">
-            <imports test="EditText"/>
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.7/@ownedClass.7" test="TimePickerFragment"/>
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.7/@ownedClass.4" test="DatePickerFragment"/>
-            <imports test="Button"/>
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.7/@ownedClass.2" test="NewItemActivity"/>
-            <imports test="PostCallback"/>
-          </ownedClass>
-          <ownedClass name="SingleEventActivity">
-            <imports test="ContentUris"/>
-            <imports importedClass="//@ownedPackage.1/@subPackage.8/@subPackage.0/@ownedClass.0" test="Drawable"/>
-            <imports test="ArrayList"/>
-            <imports test="ScrollView"/>
-            <imports test="LinearLayout"/>
-            <imports importedClass="//@ownedPackage.1/@subPackage.10/@ownedClass.0" test="CalendarContract"/>
-          </ownedClass>
-          <ownedClass name="Event"/>
-          <ownedClass name="EventListFragment">
-            <imports test="AsyncTask"/>
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.7/@ownedClass.6" test="HamersFragment"/>
-            <imports test="Collections"/>
-            <imports importedInterface="//@ownedPackage.0/@subPackage.0/@subPackage.0/@ownedInterface.0" test="Type"/>
-          </ownedClass>
-          <ownedClass name="EventListAdapter">
-            <imports test="Filter"/>
-            <imports test="Filterable"/>
-          </ownedClass>
-        </subPackage>
-        <subPackage name="quotes">
-          <ownedClass name="QuoteAdapter">
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.7/@ownedClass.1" test="AnimateFirstDisplayListener"/>
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.3" test="SingleUserActivity"/>
-          </ownedClass>
-          <ownedClass name="Quote"/>
-          <ownedClass name="NewQuoteFragment">
-            <imports test="Spinner"/>
-            <imports importedClass="//@ownedPackage.1/@subPackage.9/@ownedClass.3" test="Dialog"/>
-            <imports test="ArrayAdapter"/>
-            <imports importedClass="//@ownedPackage.1/@subPackage.9/@ownedClass.5" test="AlertDialog"/>
-          </ownedClass>
-          <ownedClass name="QuoteFragment">
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.7/@ownedClass.5" test="DividerItemDecoration"/>
-          </ownedClass>
-        </subPackage>
-        <subPackage name="stickers">
-          <ownedClass name="Sticker"/>
-          <ownedClass name="StickerFragment">
-            <imports importedClass="//@ownedPackage.1/@ownedClass.0" test="Manifest"/>
-            <imports importedClass="//@ownedPackage.1/@subPackage.11/@subPackage.1/@ownedClass.1" test="PackageManager"/>
-          </ownedClass>
-        </subPackage>
-        <subPackage name="gcm">
-          <ownedClass name="MyGcmListenerService">
-            <imports importedClass="//@ownedPackage.1/@subPackage.9/@ownedClass.1" test="NotificationManager"/>
-            <imports importedClass="//@ownedPackage.1/@subPackage.5/@ownedClass.0" test="RingtoneManager"/>
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.4" test="Event"/>
-            <imports importedClass="//@ownedPackage.1/@subPackage.9/@ownedClass.7" test="PendingIntent"/>
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.1" test="Beer"/>
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.4" test="SingleBeerActivity"/>
-            <imports importedClass="//@ownedPackage.1/@subPackage.8/@ownedClass.1" test="BitmapFactory"/>
-            <imports importedClass="//@ownedPackage.2/@subPackage.1/@ownedClass.1" test="JSONArray"/>
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3" test="SingleEventActivity"/>
-            <imports test="Set"/>
-          </ownedClass>
-          <ownedClass name="MyInstanceIDListenerService"/>
-          <ownedClass name="RegistrationIntentService">
-            <imports importedClass="//@ownedPackage.1/@subPackage.9/@ownedClass.6" test="IntentService"/>
-            <imports test="Log"/>
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.0" test="MainActivity"/>
-            <imports test="IOException"/>
-            <imports importedClass="//@ownedPackage.2/@subPackage.1/@ownedClass.0" test="JSONException"/>
-            <imports importedClass="//@ownedPackage.2/@subPackage.1/@ownedClass.2" test="JSONObject"/>
-          </ownedClass>
-        </subPackage>
-        <subPackage name="helpers">
-          <ownedClass name="SingleImageActivity"/>
-          <ownedClass name="AnimateFirstDisplayListener">
-            <imports test="LinkedList"/>
-            <imports test="List"/>
-          </ownedClass>
-          <ownedClass name="NewItemActivity">
-            <imports importedClass="//@ownedPackage.1/@subPackage.6/@subPackage.1/@ownedClass.1" test="AnimationUtils"/>
-            <imports importedClass="//@ownedPackage.1/@subPackage.6/@subPackage.1/@ownedClass.0" test="Animation"/>
-          </ownedClass>
-          <ownedClass name="HamersActivity"/>
-          <ownedClass name="DatePickerFragment">
-            <imports test="DatePicker"/>
-            <imports importedClass="//@ownedPackage.1/@subPackage.9/@ownedClass.0" test="DatePickerDialog"/>
-          </ownedClass>
-          <ownedClass name="DividerItemDecoration">
-            <imports importedClass="//@ownedPackage.1/@subPackage.11/@subPackage.0/@ownedClass.0" test="TypedArray"/>
-            <imports importedClass="//@ownedPackage.1/@subPackage.8/@ownedClass.2" test="Canvas"/>
-          </ownedClass>
-          <ownedClass name="HamersFragment"/>
-          <ownedClass name="TimePickerFragment">
-            <imports importedClass="//@ownedPackage.1/@subPackage.9/@ownedClass.2" test="TimePickerDialog"/>
-            <imports test="TimePicker"/>
-            <imports importedClass="//@ownedPackage.1/@subPackage.4/@subPackage.0/@ownedClass.0" test="DateFormat"/>
-          </ownedClass>
-          <ownedClass name="ScrollAwareFABBehavior">
-            <imports test="AttributeSet"/>
-          </ownedClass>
-          <ownedClass name="Utils">
-            <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.1" test="Meeting"/>
-            <imports importedClass="//@ownedPackage.0/@subPackage.3/@ownedClass.3" test="MessageDigest"/>
-            <imports importedClass="//@ownedPackage.0/@subPackage.3/@ownedClass.0" test="NoSuchAlgorithmException"/>
-            <imports test="UnsupportedEncodingException"/>
-            <imports importedInterface="//@ownedPackage.1/@subPackage.4/@ownedInterface.0" test="Editable"/>
-          </ownedClass>
-        </subPackage>
-        <subPackage name="news">
-          <ownedClass name="NewNewsActivity"/>
-          <ownedClass name="NewsFragment"/>
-          <ownedClass name="News"/>
-          <ownedClass name="NewsAdapter"/>
-        </subPackage>
-        <subPackage name="meetings">
-          <ownedClass name="NewMeetingActivity">
-            <imports test="Calendar"/>
-          </ownedClass>
-          <ownedClass name="Meeting"/>
-          <ownedClass name="MeetingAdapter">
-            <imports importedClass="//@ownedPackage.1/@subPackage.9/@ownedClass.4" test="Activity"/>
-          </ownedClass>
-          <ownedClass name="MeetingFragment"/>
-          <ownedClass name="SingleMeetingActivity"/>
-        </subPackage>
-        <ownedClass name="MainActivity">
-          <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.3" test="BeerFragment"/>
-          <imports test="ImageView"/>
-          <imports test="File"/>
-          <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.3" test="MeetingFragment"/>
-          <imports test="Date"/>
-          <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.7/@ownedClass.3" test="HamersActivity"/>
-          <imports importedClass="//@ownedPackage.1/@subPackage.6/@subPackage.2/@ownedClass.0" test="InputMethodManager"/>
-          <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.1" test="EventFragment"/>
-          <imports test="Context"/>
-          <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.1" test="NewsFragment"/>
-          <imports test="Toast"/>
-          <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.1" test="StickerFragment"/>
-          <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.4" test="User"/>
-          <imports importedClass="//@ownedPackage.0/@subPackage.1/@ownedClass.1" test="SimpleDateFormat"/>
-          <imports test="IntentFilter"/>
-          <imports importedClass="//@ownedPackage.1/@subPackage.12/@ownedClass.0" test="PreferenceManager"/>
-          <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.2" test="RegistrationIntentService"/>
-          <imports importedClass="//@ownedPackage.0/@subPackage.1/@ownedClass.0" test="DateFormat"/>
-          <imports test="Locale"/>
-          <imports importedClass="//@ownedPackage.0/@subPackage.1/@ownedClass.2" test="ParseException"/>
-          <imports test="Handler"/>
-          <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.3" test="QuoteFragment"/>
-          <imports importedClass="//@ownedPackage.1/@subPackage.8/@ownedClass.0" test="Bitmap"/>
-          <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.0" test="UserFragment"/>
-          <imports test="BroadcastReceiver"/>
-          <imports test="GetCallback"/>
-        </ownedClass>
-        <ownedClass name="AboutFragment">
-          <imports importedClass="//@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.7/@ownedClass.9" test="Utils"/>
-          <imports test="MenuInflater"/>
-          <imports importedClass="//@ownedPackage.1/@subPackage.2/@ownedClass.0" test="Uri"/>
-          <imports test="LayoutInflater"/>
-          <imports test="HashMap"/>
-          <imports test="TextView"/>
-          <imports test="Intent"/>
-          <imports test="ViewGroup"/>
-          <imports test="Menu"/>
-          <imports test="MenuItem"/>
-          <imports test="DialogInterface"/>
-        </ownedClass>
-        <ownedClass name="SettingsFragment">
-          <imports test="Loader"/>
-          <imports test="Bundle"/>
-          <imports test="View"/>
-          <imports test="SharedPreferences"/>
-        </ownedClass>
-        <ownedClass name="BuildConfig"/>
       </subPackage>
-    </subPackage>
-  </ownedPackage>
-</ourjava:Root>
+    </ownedPackage>
+    <ownedPackage name="java">
+      <subPackage name="util"/>
+      <subPackage name="lang">
+        <subPackage name="reflect">
+          <ownedInterface name="GenericDeclaration"/>
+          <ownedInterface name="Type"/>
+          <ownedInterface name="AnnotatedElement"/>
+        </subPackage>
+      </subPackage>
+      <subPackage name="text">
+        <ownedClass name="Format"/>
+        <ownedClass name="SimpleDateFormat" method="/3"/>
+        <ownedClass name="DateFormat" method="/1 /2"/>
+        <ownedClass name="ParseException"/>
+      </subPackage>
+      <subPackage name="io"/>
+      <subPackage name="security">
+        <ownedClass name="GeneralSecurityException"/>
+        <ownedClass name="MessageDigestSpi"/>
+        <ownedClass name="NoSuchAlgorithmException"/>
+        <ownedClass name="MessageDigest" method="/4 /5"/>
+      </subPackage>
+    </ownedPackage>
+    <ownedPackage name="android">
+      <subPackage name="media">
+        <ownedClass name="RingtoneManager" method="/257"/>
+      </subPackage>
+      <subPackage name="text">
+        <subPackage name="format">
+          <ownedClass name="DateFormat" method="/267"/>
+        </subPackage>
+        <ownedInterface name="TextWatcher"/>
+        <ownedInterface name="Editable"/>
+        <ownedInterface name="NoCopySpan"/>
+        <ownedInterface name="GetChars"/>
+        <ownedInterface name="Spannable"/>
+        <ownedInterface name="Spanned"/>
+      </subPackage>
+      <subPackage name="net">
+        <ownedClass name="Uri" method="/258 /259"/>
+      </subPackage>
+      <subPackage name="graphics">
+        <subPackage name="drawable">
+          <ownedClass name="Drawable" method="/268 /269 /270"/>
+        </subPackage>
+        <ownedClass name="Canvas"/>
+        <ownedClass name="BitmapFactory" method="/271"/>
+        <ownedClass name="Bitmap"/>
+        <ownedClass name="Color"/>
+      </subPackage>
+      <subPackage name="annotation"/>
+      <subPackage name="os"/>
+      <subPackage name="content">
+        <subPackage name="pm">
+          <ownedClass name="PackageInfo"/>
+          <ownedClass name="PackageManager" method="/260"/>
+        </subPackage>
+        <subPackage name="res">
+          <ownedClass name="TypedArray" method="/261 /262"/>
+          <ownedClass name="Resources" method="/263"/>
+        </subPackage>
+      </subPackage>
+      <subPackage name="preference">
+        <ownedClass name="PreferenceManager" method="/278"/>
+      </subPackage>
+      <subPackage name="util"/>
+      <subPackage name="view">
+        <subPackage name="accessibility">
+          <ownedInterface name="AccessibilityEventSource"/>
+        </subPackage>
+        <subPackage name="inputmethod">
+          <ownedClass name="InputMethodManager" method="/264"/>
+        </subPackage>
+        <subPackage name="animation">
+          <ownedClass name="Animation" method="/266"/>
+          <ownedClass name="AnimationUtils" method="/265"/>
+        </subPackage>
+      </subPackage>
+      <subPackage name="app">
+        <ownedClass name="AlertDialog"/>
+        <ownedClass name="Dialog" method="/274 /275"/>
+        <ownedClass name="DatePickerDialog"/>
+        <ownedClass name="Service"/>
+        <ownedClass name="NotificationManager" method="/272"/>
+        <ownedClass name="Notification"/>
+        <ownedClass name="TimePickerDialog"/>
+        <ownedClass name="PendingIntent" method="/273"/>
+        <ownedClass name="IntentService"/>
+        <ownedClass name="Activity" method="/276 /277"/>
+      </subPackage>
+      <subPackage name="widget"/>
+      <subPackage name="provider">
+        <ownedClass name="CalendarContract"/>
+      </subPackage>
+      <ownedClass name="R"/>
+      <ownedClass name="Manifest"/>
+    </ownedPackage>
+    <ownedPackage name="nl">
+      <subPackage name="ecci">
+        <subPackage name="hamers">
+          <subPackage name="meetings">
+            <ownedClass name="Meeting" method="/37 /38 /39 /40 /41 /42 /43 /44"/>
+            <ownedClass name="NewMeetingActivity" method="/51 /52 /53"/>
+            <ownedClass name="SingleMeetingActivity" method="/36"/>
+            <ownedClass name="MeetingFragment" method="/45 /46 /47"/>
+            <ownedClass name="MeetingAdapter" method="/48 /49 /50"/>
+          </subPackage>
+          <subPackage name="users">
+            <ownedClass name="UserFragmentPagerAdapter" method="/30 /31 /32"/>
+            <ownedClass name="SingleUserActivity" method="/26 /27 /28 /29"/>
+            <ownedClass name="UserListAdapter" method="/33 /34 /35"/>
+            <ownedClass name="UserListFragment" method="/8 /9 /10 /11 /12 /13 /14 /15 /16">
+              <imports name="AbsListView"/>
+              <imports name="ListView"/>
+            </ownedClass>
+            <ownedClass name="User" method="/17 /18 /19 /20 /21 /22 /23 /24 /25"/>
+            <ownedClass name="UserFragment" method="/6 /7"/>
+          </subPackage>
+          <subPackage name="gcm">
+            <ownedClass name="MyGcmListenerService" method="/116 /117">
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3" name="Beer"/>
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.4" name="SingleEventActivity"/>
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2" name="Event"/>
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@ownedClass.0" name="JSONArray"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.0/@ownedClass.0" name="RingtoneManager"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.4" name="NotificationManager"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.1" name="BitmapFactory"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.7" name="PendingIntent"/>
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5" name="SingleBeerActivity"/>
+              <imports name="Set"/>
+            </ownedClass>
+            <ownedClass name="MyInstanceIDListenerService" method="/115"/>
+            <ownedClass name="RegistrationIntentService" method="/118 /119 /120">
+              <imports name="IOException"/>
+              <imports name="Log"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.8" name="IntentService"/>
+            </ownedClass>
+          </subPackage>
+          <subPackage name="beers">
+            <ownedClass name="NewBeerActivity" method="/183 /184"/>
+            <ownedClass name="NewReviewActivity" method="/201 /202 /203">
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@ownedClass.1" name="JSONObject"/>
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.1" name="NewItemActivity"/>
+              <imports name="Calendar"/>
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.5" name="DatePickerFragment"/>
+              <imports name="EditText"/>
+              <imports importedClass="/0/@ownedPackage.0/@subPackage.0/@ownedClass.2" name="JSONException"/>
+              <imports name="SeekBar"/>
+              <imports name="PostCallback"/>
+            </ownedClass>
+            <ownedClass name="BeerAdapter" method="/204 /205 /206 /207">
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.9" name="Activity"/>
+              <imports name="Filter"/>
+              <imports name="Filterable"/>
+            </ownedClass>
+            <ownedClass name="Beer" method="/185 /186 /187 /188 /189 /190 /191 /192 /193 /194 /195 /196 /197 /198 /199 /200"/>
+            <ownedClass name="Review" method="/208 /209 /210 /211 /212 /213 /214"/>
+            <ownedClass name="SingleBeerActivity" method="/215 /216 /217 /218 /219 /220 /221 /222 /223 /224 /225 /226">
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.6" name="SingleImageActivity"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.0" name="AlertDialog"/>
+              <imports name="LinearLayout"/>
+              <imports name="Button"/>
+              <imports name="ContextMenu"/>
+            </ownedClass>
+            <ownedClass name="BeerFragment" method="/227 /228 /229 /230 /231 /232 /233 /234 /235 /236">
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1" name="MainActivity"/>
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.9" name="AnimateFirstDisplayListener"/>
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.7" name="DividerItemDecoration"/>
+              <imports name="ArrayList"/>
+              <imports name="AsyncTask"/>
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.3" name="HamersFragment"/>
+              <imports name="Collections"/>
+              <imports name="Comparator"/>
+              <imports importedInterface="/0/@ownedPackage.1/@subPackage.1/@subPackage.0/@ownedInterface.1" name="Type"/>
+            </ownedClass>
+          </subPackage>
+          <subPackage name="helpers">
+            <ownedClass name="Utils" method="/72 /73 /74 /75 /76 /77 /78 /79 /80 /81 /82 /83 /84 /85 /86">
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.4/@ownedClass.2" name="NoSuchAlgorithmException"/>
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.0" name="Meeting"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.6/@subPackage.0/@ownedClass.1" name="PackageManager"/>
+              <imports importedClass="/0/@ownedPackage.1/@subPackage.4/@ownedClass.3" name="MessageDigest"/>
+              <imports name="UnsupportedEncodingException"/>
+              <imports importedInterface="/0/@ownedPackage.2/@subPackage.1/@ownedInterface.1" name="Editable"/>
+            </ownedClass>
+            <ownedClass name="NewItemActivity" method="/66 /67 /68 /69">
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.9/@subPackage.2/@ownedClass.0" name="Animation"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.9/@subPackage.2/@ownedClass.1" name="AnimationUtils"/>
+            </ownedClass>
+            <ownedClass name="TimePickerFragment" method="/87 /88">
+              <imports name="TimePicker"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.6" name="TimePickerDialog"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.1/@subPackage.0/@ownedClass.0" name="DateFormat"/>
+            </ownedClass>
+            <ownedClass name="HamersFragment" method="/92 /93"/>
+            <ownedClass name="HamersActivity" method="/94"/>
+            <ownedClass name="DatePickerFragment" method="/96 /97">
+              <imports name="DatePicker"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.2" name="DatePickerDialog"/>
+            </ownedClass>
+            <ownedClass name="SingleImageActivity" method="/70"/>
+            <ownedClass name="DividerItemDecoration" method="/71">
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.0" name="Canvas"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.6/@subPackage.1/@ownedClass.0" name="TypedArray"/>
+            </ownedClass>
+            <ownedClass name="ScrollAwareFABBehavior" method="/89 /90 /91">
+              <imports name="AttributeSet"/>
+            </ownedClass>
+            <ownedClass name="AnimateFirstDisplayListener" method="/95">
+              <imports name="LinkedList"/>
+              <imports name="List"/>
+            </ownedClass>
+          </subPackage>
+          <subPackage name="news">
+            <ownedClass name="NewNewsActivity" method="/102 /103"/>
+            <ownedClass name="News" method="/104 /105 /106 /107 /108 /109"/>
+            <ownedClass name="NewsFragment" method="/110 /111 /112 /113 /114"/>
+            <ownedClass name="NewsAdapter" method="/98 /99 /100 /101"/>
+          </subPackage>
+          <subPackage name="stickers">
+            <ownedClass name="StickerFragment" method="/58 /59 /60 /61 /62 /63 /64 /65">
+              <imports importedClass="/0/@ownedPackage.2/@ownedClass.1" name="Manifest"/>
+            </ownedClass>
+            <ownedClass name="Sticker" method="/54 /55 /56 /57"/>
+          </subPackage>
+          <subPackage name="loader"/>
+          <subPackage name="events">
+            <ownedClass name="NewEventActivity" method="/166 /167 /168 /169 /170 /171 /172 /173">
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.2" name="TimePickerFragment"/>
+            </ownedClass>
+            <ownedClass name="EventFragmentPagerAdapter" method="/174 /175 /176"/>
+            <ownedClass name="Event" method="/156 /157 /158 /159 /160 /161 /162 /163 /164 /165"/>
+            <ownedClass name="EventListAdapter" method="/177 /178 /179 /180"/>
+            <ownedClass name="SingleEventActivity" method="/145 /146 /147 /148 /149 /150 /151 /152 /153 /154 /155">
+              <imports name="ContentUris"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@subPackage.0/@ownedClass.0" name="Drawable"/>
+              <imports name="ScrollView"/>
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.12/@ownedClass.0" name="CalendarContract"/>
+            </ownedClass>
+            <ownedClass name="EventListFragment" method="/139 /140 /141 /142 /143 /144"/>
+            <ownedClass name="EventFragment" method="/181 /182">
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.3" name="Color"/>
+            </ownedClass>
+          </subPackage>
+          <subPackage name="quotes">
+            <ownedClass name="QuoteAdapter" method="/121 /122 /123 /124">
+              <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.1" name="SingleUserActivity"/>
+            </ownedClass>
+            <ownedClass name="Quote" method="/132 /133 /134 /135"/>
+            <ownedClass name="NewQuoteFragment" method="/136 /137 /138">
+              <imports importedClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.1" name="Dialog"/>
+              <imports name="Spinner"/>
+              <imports name="ArrayAdapter"/>
+            </ownedClass>
+            <ownedClass name="QuoteFragment" method="/125 /126 /127 /128 /129 /130 /131"/>
+          </subPackage>
+          <ownedClass name="SettingsFragment" method="/251">
+            <imports name="Loader"/>
+            <imports name="SharedPreferences"/>
+          </ownedClass>
+          <ownedClass name="MainActivity" method="/237 /238 /239 /240 /241 /242 /243 /244 /245 /246 /247 /248 /249 /250">
+            <imports importedClass="/0/@ownedPackage.1/@subPackage.2/@ownedClass.2" name="DateFormat"/>
+            <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.4" name="HamersActivity"/>
+            <imports name="Context"/>
+            <imports name="Toast"/>
+            <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.5" name="UserFragment"/>
+            <imports name="Date"/>
+            <imports name="ImageView"/>
+            <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.4" name="User"/>
+            <imports importedClass="/0/@ownedPackage.2/@subPackage.9/@subPackage.1/@ownedClass.0" name="InputMethodManager"/>
+            <imports importedClass="/0/@ownedPackage.1/@subPackage.2/@ownedClass.1" name="SimpleDateFormat"/>
+            <imports name="File"/>
+            <imports importedClass="/0/@ownedPackage.2/@subPackage.7/@ownedClass.0" name="PreferenceManager"/>
+            <imports importedClass="/0/@ownedPackage.1/@subPackage.2/@ownedClass.3" name="ParseException"/>
+            <imports name="IntentFilter"/>
+            <imports name="Handler"/>
+            <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.3" name="MeetingFragment"/>
+            <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.6" name="BeerFragment"/>
+            <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.2/@ownedClass.2" name="RegistrationIntentService"/>
+            <imports importedClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.2" name="Bitmap"/>
+            <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.6" name="EventFragment"/>
+            <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.2" name="NewsFragment"/>
+            <imports name="BroadcastReceiver"/>
+            <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.3" name="QuoteFragment"/>
+            <imports name="Locale"/>
+            <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.0" name="StickerFragment"/>
+            <imports name="GetCallback"/>
+          </ownedClass>
+          <ownedClass name="AboutFragment" method="/252 /253 /254 /255 /256">
+            <imports importedClass="/0/@ownedPackage.2/@subPackage.2/@ownedClass.0" name="Uri"/>
+            <imports name="ViewGroup"/>
+            <imports name="LayoutInflater"/>
+            <imports name="Bundle"/>
+            <imports name="TextView"/>
+            <imports name="Intent"/>
+            <imports name="HashMap"/>
+            <imports importedClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0" name="Utils"/>
+            <imports name="MenuInflater"/>
+            <imports name="View"/>
+            <imports name="MenuItem"/>
+            <imports name="DialogInterface"/>
+            <imports name="Menu"/>
+          </ownedClass>
+          <ownedClass name="BuildConfig"/>
+        </subPackage>
+      </subPackage>
+    </ownedPackage>
+  </ourjava:Root>
+  <ourjava:Method name="parse" fromClass="/0/@ownedPackage.1/@subPackage.2/@ownedClass.2"/>
+  <ourjava:Method name="format" fromClass="/0/@ownedPackage.1/@subPackage.2/@ownedClass.2"/>
+  <ourjava:Method name="toPattern" fromClass="/0/@ownedPackage.1/@subPackage.2/@ownedClass.1"/>
+  <ourjava:Method name="getInstance" fromClass="/0/@ownedPackage.1/@subPackage.4/@ownedClass.3"/>
+  <ourjava:Method name="digest" fromClass="/0/@ownedPackage.1/@subPackage.4/@ownedClass.3"/>
+  <ourjava:Method name="onCreateView" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.5"/>
+  <ourjava:Method name="onPause" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.5"/>
+  <ourjava:Method name="onCreateView" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.3"/>
+  <ourjava:Method name="onCreateOptionsMenu" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.3"/>
+  <ourjava:Method name="onRefresh" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.3"/>
+  <ourjava:Method name="onOptionsItemSelected" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.3"/>
+  <ourjava:Method name="sort" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.3"/>
+  <ourjava:Method name="sortByUsername" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.3"/>
+  <ourjava:Method name="sortByQuoteCount" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.3"/>
+  <ourjava:Method name="sortByReviewCount" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.3"/>
+  <ourjava:Method name="sortByBatch" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.3"/>
+  <ourjava:Method name="getID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.4"/>
+  <ourjava:Method name="getName" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.4"/>
+  <ourjava:Method name="getEmail" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.4"/>
+  <ourjava:Method name="getQuoteCount" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.4"/>
+  <ourjava:Method name="getReviewCount" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.4"/>
+  <ourjava:Method name="getMember" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.4"/>
+  <ourjava:Method name="getBatch" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.4"/>
+  <ourjava:Method name="getNicknames" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.4"/>
+  <ourjava:Method name="getCreatedAt" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.4"/>
+  <ourjava:Method name="onCreate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.1"/>
+  <ourjava:Method name="initToolbar" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.1"/>
+  <ourjava:Method name="loadBackdrop" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.1"/>
+  <ourjava:Method name="fillRow" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.1"/>
+  <ourjava:Method name="getCount" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.0"/>
+  <ourjava:Method name="getItem" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.0"/>
+  <ourjava:Method name="getPageTitle" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.0"/>
+  <ourjava:Method name="onCreateViewHolder" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.2"/>
+  <ourjava:Method name="onBindViewHolder" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.2"/>
+  <ourjava:Method name="getItemCount" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.1/@ownedClass.2"/>
+  <ourjava:Method name="onCreate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.2"/>
+  <ourjava:Method name="getID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="getAgenda" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="getNotes" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="getSubject" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="getUserID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="getDate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="getCreatedAt" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="getUpdatedAt" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="onCreateView" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.3"/>
+  <ourjava:Method name="onRefresh" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.3"/>
+  <ourjava:Method name="onResume" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.3"/>
+  <ourjava:Method name="onCreateViewHolder" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.4"/>
+  <ourjava:Method name="onBindViewHolder" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.4"/>
+  <ourjava:Method name="getItemCount" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.4"/>
+  <ourjava:Method name="onCreate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="postItem" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="showDatePickerDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="getID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.1"/>
+  <ourjava:Method name="getLat" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.1"/>
+  <ourjava:Method name="getLon" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.1"/>
+  <ourjava:Method name="getNotes" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.1"/>
+  <ourjava:Method name="onCreateView" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.0"/>
+  <ourjava:Method name="onMapReady" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.0"/>
+  <ourjava:Method name="onRefresh" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.0"/>
+  <ourjava:Method name="addMarkers" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.0"/>
+  <ourjava:Method name="onResume" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.0"/>
+  <ourjava:Method name="onPause" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.0"/>
+  <ourjava:Method name="onDestroy" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.0"/>
+  <ourjava:Method name="onLowMemory" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.6/@ownedClass.0"/>
+  <ourjava:Method name="onCreateOptionsMenu" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.1"/>
+  <ourjava:Method name="onOptionsItemSelected" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.1"/>
+  <ourjava:Method name="disableLoadingAnimation" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.1"/>
+  <ourjava:Method name="postItem" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.1"/>
+  <ourjava:Method name="onCreate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.6"/>
+  <ourjava:Method name="onDrawOver" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.7"/>
+  <ourjava:Method name="hex" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="md5Hex" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="showApiKeyDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="hasApiKey" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="stringArrayToCharSequenceArray" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="getAppVersion" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="getGravatarURL" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="convertNicknames" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="usernameToID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="createActiveMemberList" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="getUser" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="getOwnUser" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="getEvent" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="getBeer" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="getMeeting" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.0"/>
+  <ourjava:Method name="onCreateDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.2"/>
+  <ourjava:Method name="onTimeSet" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.2"/>
+  <ourjava:Method name="onStartNestedScroll" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.8"/>
+  <ourjava:Method name="layoutDependsOn" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.8"/>
+  <ourjava:Method name="onNestedScroll" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.8"/>
+  <ourjava:Method name="initSwiper" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.3"/>
+  <ourjava:Method name="setRefreshing" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.3"/>
+  <ourjava:Method name="onOptionsItemSelected" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.4"/>
+  <ourjava:Method name="onLoadingComplete" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.9"/>
+  <ourjava:Method name="onCreateDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.5"/>
+  <ourjava:Method name="onDateSet" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.4/@ownedClass.5"/>
+  <ourjava:Method name="onCreateViewHolder" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.3"/>
+  <ourjava:Method name="onBindViewHolder" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.3"/>
+  <ourjava:Method name="getItemCount" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.3"/>
+  <ourjava:Method name="getFilter" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.3"/>
+  <ourjava:Method name="onCreate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.0"/>
+  <ourjava:Method name="postItem" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.0"/>
+  <ourjava:Method name="getID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.1"/>
+  <ourjava:Method name="getTitle" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.1"/>
+  <ourjava:Method name="getBody" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.1"/>
+  <ourjava:Method name="getCategory" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.1"/>
+  <ourjava:Method name="getDate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.1"/>
+  <ourjava:Method name="getCreatedAt" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.1"/>
+  <ourjava:Method name="onCreateView" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.2"/>
+  <ourjava:Method name="onOptionsItemSelected" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.2"/>
+  <ourjava:Method name="onRefresh" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.2"/>
+  <ourjava:Method name="onResume" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.2"/>
+  <ourjava:Method name="onCreateOptionsMenu" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.5/@ownedClass.2"/>
+  <ourjava:Method name="onTokenRefresh" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.2/@ownedClass.1"/>
+  <ourjava:Method name="onMessageReceived" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.2/@ownedClass.0"/>
+  <ourjava:Method name="sendNotification" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.2/@ownedClass.0"/>
+  <ourjava:Method name="onHandleIntent" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.2/@ownedClass.2"/>
+  <ourjava:Method name="sendRegistrationToServer" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.2/@ownedClass.2"/>
+  <ourjava:Method name="subscribeTopics" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.2/@ownedClass.2"/>
+  <ourjava:Method name="onCreateViewHolder" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.0"/>
+  <ourjava:Method name="onBindViewHolder" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.0"/>
+  <ourjava:Method name="getItemCount" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.0"/>
+  <ourjava:Method name="getFilter" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.0"/>
+  <ourjava:Method name="onCreateView" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.3"/>
+  <ourjava:Method name="onRefresh" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.3"/>
+  <ourjava:Method name="onCreateOptionsMenu" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.3"/>
+  <ourjava:Method name="onResume" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.3"/>
+  <ourjava:Method name="onOptionsItemSelected" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.3"/>
+  <ourjava:Method name="scrollTop" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.3"/>
+  <ourjava:Method name="onDismiss" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.3"/>
+  <ourjava:Method name="getID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.1"/>
+  <ourjava:Method name="getText" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.1"/>
+  <ourjava:Method name="getUserID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.1"/>
+  <ourjava:Method name="getDate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.1"/>
+  <ourjava:Method name="onCreateDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.2"/>
+  <ourjava:Method name="onDismiss" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.2"/>
+  <ourjava:Method name="postQuote" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.9/@ownedClass.2"/>
+  <ourjava:Method name="onCreateView" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.5"/>
+  <ourjava:Method name="onRefresh" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.5"/>
+  <ourjava:Method name="onOptionsItemSelected" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.5"/>
+  <ourjava:Method name="onResume" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.5"/>
+  <ourjava:Method name="onCreateOptionsMenu" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.5"/>
+  <ourjava:Method name="onActivityResult" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.5"/>
+  <ourjava:Method name="onCreate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.4"/>
+  <ourjava:Method name="onCreateOptionsMenu" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.4"/>
+  <ourjava:Method name="onOptionsItemSelected" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.4"/>
+  <ourjava:Method name="setPresent" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.4"/>
+  <ourjava:Method name="setAbsent" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.4"/>
+  <ourjava:Method name="postSignup" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.4"/>
+  <ourjava:Method name="initToolbar" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.4"/>
+  <ourjava:Method name="initSignups" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.4"/>
+  <ourjava:Method name="newSingleRow" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.4"/>
+  <ourjava:Method name="fillDetailRow" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.4"/>
+  <ourjava:Method name="fillImageRow" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.4"/>
+  <ourjava:Method name="getID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2"/>
+  <ourjava:Method name="getTitle" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2"/>
+  <ourjava:Method name="getDescription" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2"/>
+  <ourjava:Method name="getLocation" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2"/>
+  <ourjava:Method name="getDate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2"/>
+  <ourjava:Method name="getEndDate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2"/>
+  <ourjava:Method name="getDeadline" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2"/>
+  <ourjava:Method name="getUserID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2"/>
+  <ourjava:Method name="getSignups" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2"/>
+  <ourjava:Method name="getCreatedAt" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.2"/>
+  <ourjava:Method name="onCreate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.0"/>
+  <ourjava:Method name="showDatePickerDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.0"/>
+  <ourjava:Method name="showEndDatePickerDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.0"/>
+  <ourjava:Method name="showTimePickerDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.0"/>
+  <ourjava:Method name="showEndTimePickerDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.0"/>
+  <ourjava:Method name="showDeadlineTimePickerDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.0"/>
+  <ourjava:Method name="showDeadlineDatePickerDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.0"/>
+  <ourjava:Method name="postItem" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.0"/>
+  <ourjava:Method name="getCount" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.1"/>
+  <ourjava:Method name="getItem" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.1"/>
+  <ourjava:Method name="getPageTitle" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.1"/>
+  <ourjava:Method name="onCreateViewHolder" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.3"/>
+  <ourjava:Method name="onBindViewHolder" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.3"/>
+  <ourjava:Method name="getItemCount" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.3"/>
+  <ourjava:Method name="getFilter" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.3"/>
+  <ourjava:Method name="onCreateView" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.6"/>
+  <ourjava:Method name="onPause" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.8/@ownedClass.6"/>
+  <ourjava:Method name="onCreate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.0"/>
+  <ourjava:Method name="postItem" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.0"/>
+  <ourjava:Method name="getID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="getName" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="getKind" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="getImageURL" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="getPercentage" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="getBrewer" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="getCountry" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="getRating" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="getUrl" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="getCreatedAt" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="setName" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="setKind" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="setPercentage" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="setBrewer" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="setCountry" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="setRating" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.3"/>
+  <ourjava:Method name="onCreate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.1"/>
+  <ourjava:Method name="showDatePickerDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.1"/>
+  <ourjava:Method name="postItem" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.1"/>
+  <ourjava:Method name="onCreateViewHolder" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.2"/>
+  <ourjava:Method name="onBindViewHolder" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.2"/>
+  <ourjava:Method name="getItemCount" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.2"/>
+  <ourjava:Method name="getFilter" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.2"/>
+  <ourjava:Method name="getID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.4"/>
+  <ourjava:Method name="getBeerID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.4"/>
+  <ourjava:Method name="getUserID" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.4"/>
+  <ourjava:Method name="getDescription" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.4"/>
+  <ourjava:Method name="getRating" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.4"/>
+  <ourjava:Method name="getCreatedAt" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.4"/>
+  <ourjava:Method name="getProefdatum" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.4"/>
+  <ourjava:Method name="onCreate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5"/>
+  <ourjava:Method name="setValues" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5"/>
+  <ourjava:Method name="getReviews" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5"/>
+  <ourjava:Method name="updateReview" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5"/>
+  <ourjava:Method name="insertReview" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5"/>
+  <ourjava:Method name="onCreateContextMenu" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5"/>
+  <ourjava:Method name="onContextItemSelected" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5"/>
+  <ourjava:Method name="onCreateOptionsMenu" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5"/>
+  <ourjava:Method name="onOptionsItemSelected" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5"/>
+  <ourjava:Method name="deleteReview" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5"/>
+  <ourjava:Method name="onActivityResult" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5"/>
+  <ourjava:Method name="fillRow" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.5"/>
+  <ourjava:Method name="onCreateView" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.6"/>
+  <ourjava:Method name="onRefresh" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.6"/>
+  <ourjava:Method name="onCreateOptionsMenu" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.6"/>
+  <ourjava:Method name="onOptionsItemSelected" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.6"/>
+  <ourjava:Method name="onResume" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.6"/>
+  <ourjava:Method name="scrollTop" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.6"/>
+  <ourjava:Method name="sortList" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.6"/>
+  <ourjava:Method name="sort" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.6"/>
+  <ourjava:Method name="onDestroy" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.6"/>
+  <ourjava:Method name="onActivityResult" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@subPackage.3/@ownedClass.6"/>
+  <ourjava:Method name="configureDefaultImageLoader" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="parseDate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="getNightModeInt" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="onCreate" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="initDrawer" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="initToolbar" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="onOptionsItemSelected" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="checkPlayServices" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="onResume" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="onPause" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="selectItem" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="hideKeyboard" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="onBackPressed" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="fillHeader" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="onCreatePreferences" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="onCreateView" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.2"/>
+  <ourjava:Method name="onOptionsItemSelected" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.2"/>
+  <ourjava:Method name="onCreateOptionsMenu" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.2"/>
+  <ourjava:Method name="buildLibrariesList" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.2"/>
+  <ourjava:Method name="showLibrariesDialog" fromClass="/0/@ownedPackage.3/@subPackage.0/@subPackage.0/@ownedClass.2"/>
+  <ourjava:Method name="getDefaultUri" fromClass="/0/@ownedPackage.2/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="parse" fromClass="/0/@ownedPackage.2/@subPackage.2/@ownedClass.0"/>
+  <ourjava:Method name="buildUpon" fromClass="/0/@ownedPackage.2/@subPackage.2/@ownedClass.0"/>
+  <ourjava:Method name="getPackageInfo" fromClass="/0/@ownedPackage.2/@subPackage.6/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="getDrawable" fromClass="/0/@ownedPackage.2/@subPackage.6/@subPackage.1/@ownedClass.0"/>
+  <ourjava:Method name="recycle" fromClass="/0/@ownedPackage.2/@subPackage.6/@subPackage.1/@ownedClass.0"/>
+  <ourjava:Method name="getString" fromClass="/0/@ownedPackage.2/@subPackage.6/@subPackage.1/@ownedClass.1"/>
+  <ourjava:Method name="hideSoftInputFromWindow" fromClass="/0/@ownedPackage.2/@subPackage.9/@subPackage.1/@ownedClass.0"/>
+  <ourjava:Method name="loadAnimation" fromClass="/0/@ownedPackage.2/@subPackage.9/@subPackage.2/@ownedClass.1"/>
+  <ourjava:Method name="setRepeatCount" fromClass="/0/@ownedPackage.2/@subPackage.9/@subPackage.2/@ownedClass.0"/>
+  <ourjava:Method name="is24HourFormat" fromClass="/0/@ownedPackage.2/@subPackage.1/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="getIntrinsicHeight" fromClass="/0/@ownedPackage.2/@subPackage.3/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="setBounds" fromClass="/0/@ownedPackage.2/@subPackage.3/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="draw" fromClass="/0/@ownedPackage.2/@subPackage.3/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="decodeResource" fromClass="/0/@ownedPackage.2/@subPackage.3/@ownedClass.1"/>
+  <ourjava:Method name="notify" fromClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.4"/>
+  <ourjava:Method name="getActivity" fromClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.7"/>
+  <ourjava:Method name="show" fromClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.1"/>
+  <ourjava:Method name="isShowing" fromClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.1"/>
+  <ourjava:Method name="startActivity" fromClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.9"/>
+  <ourjava:Method name="registerForContextMenu" fromClass="/0/@ownedPackage.2/@subPackage.10/@ownedClass.9"/>
+  <ourjava:Method name="getDefaultSharedPreferences" fromClass="/0/@ownedPackage.2/@subPackage.7/@ownedClass.0"/>
+  <ourjava:Method name="put" fromClass="/0/@ownedPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="put" fromClass="/0/@ownedPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="getString" fromClass="/0/@ownedPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="length" fromClass="/0/@ownedPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="getInt" fromClass="/0/@ownedPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="toString" fromClass="/0/@ownedPackage.0/@subPackage.0/@ownedClass.1"/>
+  <ourjava:Method name="put" fromClass="/0/@ownedPackage.0/@subPackage.0/@ownedClass.0"/>
+  <ourjava:Method name="toString" fromClass="/0/@ownedPackage.0/@subPackage.0/@ownedClass.0"/>
+</xmi:XMI>

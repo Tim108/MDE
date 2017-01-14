@@ -18,8 +18,68 @@ mapping ourjava::Package::transformPackage() : mvp::Package{
 	roott := self.root.resolveone(mvp::Root);
 	package := self.package.resolveone(mvp::Package);
 	subpackage := self.subPackage -> map transformPackage();
+	//ownedClass := self.ownedClass -> map transformClass();
+	
+	ownedClass += self.getModels();
+	ownedClass += self.getViews();
+	ownedClass += self.getPresenters();
+	ownedClass += self.getUnspecifiedClasses();
 }
 
-mapping ourjava::Class::transformClass(){
-	
+query ourjava::Package::getModels() : Set(mvp::Model){
+	var allClasses := self.ownedClass;
+	var classes := allClasses -> select(c | c.getType() = "Model");
+	return classes -> map transformToModel() -> asSet();
+	//return ourjava -> objectsOfType(ourjava::Class) -> asOrderedSet() -> first() -> map transformToModel();
+}
+
+query ourjava::Package::getViews() : Set(mvp::View){
+	var allClasses := self.ownedClass;
+	var classes := allClasses -> select(c | c.getType() = "View");
+	return classes -> map transformToView() -> asSet();
+}
+
+query ourjava::Package::getPresenters() : Set(mvp::Presenter){
+	var allClasses := self.ownedClass;
+	var classes := allClasses -> select(c | c.getType() = "Presenter");
+	return classes -> map transformToPresenter() -> asSet();
+}
+
+query ourjava::Package::getUnspecifiedClasses() : Set(mvp::UnspecifiedClass){
+	var allClasses := self.ownedClass;
+	var classes := allClasses -> select(c | c.getType() = "UnspecifiedClass");
+	return classes -> map transformToUnspecifiedClass() -> asSet();
+}
+
+query ourjava::Class::getType() : String{
+
+	var allMethods := self.method;
+	var getSetMethods := allMethods -> select(m | m.name.toLower().startsWith('get') or m.name.toLower().startsWith('set'));
+	var getSetPercentage := getSetMethods -> size() / allMethods -> size();
+	log(allMethods -> size().repr());
+	switch{
+		case(getSetPercentage > 0.0) return "Model";
+		case(true) return "View";
+		else return "UnspecifiedClass";
+	}
+}
+
+mapping ourjava::Class::transformToUnspecifiedClass() : mvp::UnspecifiedClass{
+	name := self.name;
+	package := self.package.resolveone(mvp::Package);	
+}
+
+mapping ourjava::Class::transformToModel() : mvp::Model{
+	name := self.name;
+	package := self.package.resolveone(mvp::Package);
+}
+
+mapping ourjava::Class::transformToView() : mvp::View{
+	name := self.name;
+	package := self.package.resolveone(mvp::Package);
+}
+
+mapping ourjava::Class::transformToPresenter() : mvp::Presenter{
+	name := self.name;
+	package := self.package.resolveone(mvp::Package);
 }

@@ -17,7 +17,7 @@
         eOpposite="#//Package/subpackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roott" eType="#//Root"
         eOpposite="#//Root/subpackage"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="class" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedClass" upperBound="-1"
         eType="#//Class" containment="true" eOpposite="#//Class/package"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnspecifiedClass" eSuperTypes="#//Class"/>
@@ -25,7 +25,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="class" upperBound="-1"
         eType="#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="#//Package"
-        eOpposite="#//Package/class"/>
+        eOpposite="#//Package/ownedClass"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reason" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
