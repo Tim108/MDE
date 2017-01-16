@@ -116,64 +116,64 @@
         </subpackage>
         <subpackage name="meetings">
           <ownedClass xsi:type="mdeProject:Model" name="Meeting"/>
-          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.3/@subpackage.0/@subpackage.0/@ownedClass.1 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.9/@ownedClass.2" name="SingleMeetingActivity"/>
-          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.2/@subpackage.3/@ownedClass.0 //@subpackage.2/@subpackage.2/@ownedClass.1 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.9/@ownedClass.0 //@subpackage.1/@subpackage.1/@ownedClass.1 //@subpackage.1/@subpackage.1/@ownedClass.0 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.9/@ownedClass.5" name="NewMeetingActivity"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.1/@ownedClass.0 //@subpackage.3/@subpackage.0/@subpackage.0/@ownedClass.1 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.9/@ownedClass.2" name="SingleMeetingActivity"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.2/@subpackage.3/@ownedClass.0 //@subpackage.2/@subpackage.2/@ownedClass.1 //@subpackage.1/@subpackage.1/@ownedClass.0 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.9/@ownedClass.0 //@subpackage.1/@subpackage.1/@ownedClass.1 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.9/@ownedClass.5" name="NewMeetingActivity"/>
           <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.2/@subpackage.3/@ownedClass.3 //@subpackage.0/@subpackage.5/@ownedClass.1" name="MeetingAdapter"/>
           <ownedClass xsi:type="mdeProject:View" name="MeetingFragment"/>
         </subpackage>
         <subpackage name="gcm">
-          <ownedClass xsi:type="mdeProject:UnspecifiedClass" connectedClass="//@subpackage.0/@subpackage.5/@ownedClass.4 //@subpackage.2/@subpackage.1/@ownedClass.1" name="RegistrationIntentService"/>
+          <ownedClass xsi:type="mdeProject:UnspecifiedClass" connectedClass="//@subpackage.1/@subpackage.1/@ownedClass.0 //@subpackage.0/@subpackage.5/@ownedClass.4 //@subpackage.2/@subpackage.1/@ownedClass.1" name="RegistrationIntentService"/>
           <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="MyInstanceIDListenerService"/>
         </subpackage>
         <subpackage name="users">
           <ownedClass xsi:type="mdeProject:Model" name="User"/>
           <ownedClass xsi:type="mdeProject:View" name="UserFragmentPagerAdapter"/>
-          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.0/@subpackage.4/@ownedClass.0" name="SingleUserActivity"/>
-          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.0/@subpackage.4/@ownedClass.2" name="UserFragment"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.3/@ownedClass.0 //@subpackage.0/@subpackage.4/@ownedClass.0" name="SingleUserActivity"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.3/@ownedClass.1 //@subpackage.0/@subpackage.4/@ownedClass.2" name="UserFragment"/>
           <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.9/@ownedClass.6 //@subpackage.2/@subpackage.3/@ownedClass.4 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.9/@ownedClass.1" name="UserListFragment"/>
-          <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="UserListAdapter"/>
+          <ownedClass xsi:type="mdeProject:Presenter" name="UserListAdapter"/>
         </subpackage>
         <subpackage name="beers">
           <ownedClass xsi:type="mdeProject:Model" name="Beer"/>
           <ownedClass xsi:type="mdeProject:Model" name="Review"/>
-          <ownedClass xsi:type="mdeProject:View" name="NewBeerActivity"/>
-          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.0/@subpackage.3/@ownedClass.0" name="NewReviewActivity"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.4/@ownedClass.0 //@subpackage.1/@subpackage.1/@ownedClass.0" name="NewBeerActivity"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.2/@subpackage.3/@ownedClass.0 //@subpackage.2/@subpackage.2/@ownedClass.1 //@subpackage.1/@subpackage.1/@ownedClass.0 //@subpackage.0/@subpackage.3/@ownedClass.0" name="NewReviewActivity"/>
           <ownedClass xsi:type="mdeProject:View" name="BeerFragment"/>
           <ownedClass xsi:type="mdeProject:View" name="SingleBeerActivity"/>
-          <ownedClass xsi:type="mdeProject:UnspecifiedClass" connectedClass="//@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.9/@ownedClass.3" name="BeerAdapter"/>
+          <ownedClass xsi:type="mdeProject:Presenter" connectedClass="//@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.9/@ownedClass.3" name="BeerAdapter"/>
         </subpackage>
         <subpackage name="quotes">
           <ownedClass xsi:type="mdeProject:Model" connectedClass="//@subpackage.2/@subpackage.3/@ownedClass.1" name="Quote"/>
           <ownedClass xsi:type="mdeProject:View" name="QuoteFragment"/>
-          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.0/@subpackage.5/@ownedClass.5 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.3/@ownedClass.0 //@subpackage.0/@subpackage.5/@ownedClass.6" name="NewQuoteFragment"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.1/@subpackage.1/@ownedClass.0 //@subpackage.0/@subpackage.5/@ownedClass.5 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.3/@ownedClass.0 //@subpackage.0/@subpackage.5/@ownedClass.6" name="NewQuoteFragment"/>
         </subpackage>
         <subpackage name="news">
           <ownedClass xsi:type="mdeProject:Model" name="News"/>
-          <ownedClass xsi:type="mdeProject:View" name="NewNewsActivity"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.1/@subpackage.1/@ownedClass.0" name="NewNewsActivity"/>
           <ownedClass xsi:type="mdeProject:View" name="NewsFragment"/>
-          <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="NewsAdapter"/>
+          <ownedClass xsi:type="mdeProject:Presenter" connectedClass="//@subpackage.2/@subpackage.3/@ownedClass.1" name="NewsAdapter"/>
         </subpackage>
         <subpackage name="loader"/>
         <subpackage name="events">
           <ownedClass xsi:type="mdeProject:Model" name="Event"/>
           <ownedClass xsi:type="mdeProject:View" name="EventListFragment"/>
-          <ownedClass xsi:type="mdeProject:View" name="EventFragment"/>
-          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.2/@subpackage.2/@ownedClass.0 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.9/@ownedClass.4" name="NewEventActivity"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.8/@ownedClass.4" name="EventFragment"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.2/@subpackage.2/@ownedClass.0 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.8/@ownedClass.0 //@subpackage.1/@subpackage.1/@ownedClass.0 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.9/@ownedClass.4" name="NewEventActivity"/>
           <ownedClass xsi:type="mdeProject:View" name="EventFragmentPagerAdapter"/>
-          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.0/@subpackage.4/@subpackage.0/@ownedClass.0 //@subpackage.0/@subpackage.9/@ownedClass.0" name="SingleEventActivity"/>
-          <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="EventListAdapter"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.2/@subpackage.3/@ownedClass.1 //@subpackage.1/@subpackage.1/@ownedClass.0 //@subpackage.0/@subpackage.4/@subpackage.0/@ownedClass.0 //@subpackage.0/@subpackage.9/@ownedClass.0" name="SingleEventActivity"/>
+          <ownedClass xsi:type="mdeProject:Presenter" connectedClass="//@subpackage.2/@subpackage.3/@ownedClass.1 //@subpackage.2/@subpackage.3/@ownedClass.3" name="EventListAdapter"/>
         </subpackage>
         <subpackage name="helpers">
           <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.0/@subpackage.8/@subpackage.0/@ownedClass.0 //@subpackage.0/@subpackage.8/@subpackage.0/@ownedClass.1" name="NewItemActivity"/>
           <ownedClass xsi:type="mdeProject:View" name="HamersFragment"/>
           <ownedClass xsi:type="mdeProject:View" name="HamersActivity"/>
-          <ownedClass xsi:type="mdeProject:View" name="SingleImageActivity"/>
-          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.0/@subpackage.5/@ownedClass.7 //@subpackage.0/@subpackage.0/@subpackage.0/@ownedClass.0" name="TimePickerFragment"/>
-          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.0/@subpackage.5/@ownedClass.9" name="DatePickerFragment"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.4/@ownedClass.0" name="SingleImageActivity"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.2/@subpackage.3/@ownedClass.0 //@subpackage.0/@subpackage.5/@ownedClass.7 //@subpackage.0/@subpackage.0/@subpackage.0/@ownedClass.0" name="TimePickerFragment"/>
+          <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.2/@subpackage.3/@ownedClass.0 //@subpackage.0/@subpackage.5/@ownedClass.9" name="DatePickerFragment"/>
           <ownedClass xsi:type="mdeProject:UnspecifiedClass" connectedClass="//@subpackage.0/@subpackage.4/@ownedClass.1 //@subpackage.0/@subpackage.10/@subpackage.1/@ownedClass.1" name="DividerItemDecoration"/>
         </subpackage>
         <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.2/@subpackage.3/@ownedClass.2 //@subpackage.0/@subpackage.6/@ownedClass.0" name="AboutFragment"/>
-        <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.5/@ownedClass.1 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.2/@ownedClass.0 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.3/@ownedClass.3 //@subpackage.2/@subpackage.2/@ownedClass.2 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.8/@ownedClass.2 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.4/@ownedClass.4 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.6/@ownedClass.2 //@subpackage.2/@subpackage.3/@ownedClass.6 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.0/@ownedClass.1 //@subpackage.0/@subpackage.8/@subpackage.2/@ownedClass.0 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.1/@ownedClass.4 //@subpackage.2/@subpackage.1/@ownedClass.2" name="MainActivity"/>
+        <ownedClass xsi:type="mdeProject:View" connectedClass="//@subpackage.2/@subpackage.1/@ownedClass.2 //@subpackage.2/@subpackage.3/@ownedClass.1 //@subpackage.0/@subpackage.8/@subpackage.2/@ownedClass.0 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.3/@ownedClass.0 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.5/@ownedClass.1 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.2/@ownedClass.0 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.3/@ownedClass.3 //@subpackage.2/@subpackage.2/@ownedClass.2 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.8/@ownedClass.2 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.4/@ownedClass.4 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.6/@ownedClass.2 //@subpackage.2/@subpackage.3/@ownedClass.6 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.0/@ownedClass.1 //@subpackage.3/@subpackage.0/@subpackage.0/@subpackage.1/@ownedClass.4" name="MainActivity"/>
         <ownedClass xsi:type="mdeProject:View" name="SettingsFragment"/>
         <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="BuildConfig"/>
       </subpackage>

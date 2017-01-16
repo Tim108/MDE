@@ -10,9 +10,6 @@ main() {
 	var views := ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getViews());
 	var presenters := ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getPresenters());
 	var unspecifiedClasses := ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getUnspecifiedClasses());
-	
-	
-	
 }
 
 mapping ourjava::Root::transformRoot() : mvp::Root{
@@ -79,6 +76,7 @@ query ourjava::Class::getType() : String{
 	connections += self.imports -> collect(i | i.importedInterface.resolveone(mvp::Class));
 	var viewConnections := connections -> selectByType(mvp::View);
 	var modelConnections := connections -> selectByType(mvp::Model);
+	var presenterlikeName := self.name.toLowerCase().endsWith('adapter');
 	
 	//var usesViews := self.imports -> exists(i | i.importedClass.resolveone(mvp::Class) <> null and i.importedClass.resolveone(mvp::Class).oclIsTypeOf(mvp::View));
 	//usesViews := usesViews or self.imports -> exists(i | i.importedInterface.resolveone(mvp::Class) <> null and i.importedInterface.resolveone(mvp::Class).oclIsTypeOf(mvp::View));
@@ -96,7 +94,7 @@ query ourjava::Class::getType() : String{
 	switch{
 		case(importsViewClasses or ownNameView) decision := ("View" + reasoning);
 		case(getSetPercentage > 0.5 or ownNameModel) decision := ("Model" + reasoning);
-		case(viewConnections -> size() > 0 and modelConnections -> size() > 0) decision := ("Presenter" + reasoning);
+		case((viewConnections -> size() > 0 and modelConnections -> size() > 0) or presenterlikeName) decision := ("Presenter" + reasoning);
 		else decision := ("UnspecifiedClass" + reasoning);
 	};
 	
@@ -108,39 +106,30 @@ mapping ourjava::Class::transformToUnspecifiedClass() : mvp::UnspecifiedClass{
 	name := self.name;
 	package := self.package.resolveone(mvp::Package);
 	package.ownedClass += self.late resolve(mvp::UnspecifiedClass);
+	self.method -> forEach(m){connectedClass += m.usesClass.late resolve(mvp::Class)};
+	self.imports -> forEach(i){connectedClass += i.importedClass.late resolve(mvp::Class)};
 }
 
 mapping ourjava::Class::transformToModel() : mvp::Model{
 	name := self.name;
 	package := self.package.resolveone(mvp::Package);
 	package.ownedClass += self.late resolve(mvp::Model);
+	self.method -> forEach(m){connectedClass += m.usesClass.late resolve(mvp::Class)};
+	self.imports -> forEach(i){connectedClass += i.importedClass.late resolve(mvp::Class)};
 }
 
 mapping ourjava::Class::transformToView() : mvp::View{
 	name := self.name;
 	package := self.package.resolveone(mvp::Package);
 	package.ownedClass += self.late resolve(mvp::View);
+	self.method -> forEach(m){connectedClass += m.usesClass.late resolve(mvp::Class)};
+	self.imports -> forEach(i){connectedClass += i.importedClass.late resolve(mvp::Class)};
 }
 
 mapping ourjava::Class::transformToPresenter() : mvp::Presenter{
 	name := self.name;
 	package := self.package.resolveone(mvp::Package);
 	package.ownedClass += self.late resolve(mvp::Presenter);
-}
-
-mapping mvp::UnspecifiedClass::resolveConnectionsUnspecifiedClass() : mvp::UnspecifiedClass{
-	var imported := self.invresolveone(ourjava::Class).imports -> collect(i | i.importedClass);
-	imported -> forEach(e){connectedClass += e.late resolveone(mvp::Class)};
-}
-mapping mvp::UnspecifiedClass::resolveConnectionsModel() : mvp::Model{
-	var imported := self.invresolveone(ourjava::Class).imports -> collect(i | i.importedClass);
-	imported -> forEach(e){connectedClass += e.late resolveone(mvp::Class)};
-}
-mapping mvp::UnspecifiedClass::resolveConnectionsView() : mvp::View{
-	var imported := self.invresolveone(ourjava::Class).imports -> collect(i | i.importedClass);
-	imported -> forEach(e){connectedClass += e.late resolveone(mvp::Class)};
-}
-mapping mvp::UnspecifiedClass::resolveConnectionsPresenter() : mvp::Presenter{
-	var imported := self.invresolveone(ourjava::Class).imports -> collect(i | i.importedClass);
-	imported -> forEach(e){connectedClass += e.late resolveone(mvp::Class)};
+	self.method -> forEach(m){connectedClass += m.usesClass.late resolve(mvp::Class)};
+	self.imports -> forEach(i){connectedClass += i.importedClass.late resolve(mvp::Class)};
 }
