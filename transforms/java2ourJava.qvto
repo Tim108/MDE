@@ -32,6 +32,7 @@ mapping java::ClassDeclaration::transformClass() : ourJava::Class{
 	}
 	name := self.name;
 	package := self.package.resolveone(ourJava::Package);
+	superClass := self.superClass.type.oclAsType(java::ClassDeclaration).late resolveone(ourJava::Class);
 
 	//use late resolve to do it after the transformation --> for imports	
 	var importedNamedElement : Set(java::NamedElement) := self.originalCompilationUnit.imports -> collect(i | i.importedElement) -> asSet();

@@ -4,16 +4,42 @@
     <subpackage name="xmlpull">
       <subpackage name="v1"/>
     </subpackage>
-    <subpackage name="json"/>
+    <subpackage name="json">
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="JSONException"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="JSONArray"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="JSONObject"/>
+    </subpackage>
   </subpackage>
   <subpackage name="java">
-    <subpackage name="util"/>
-    <subpackage name="io"/>
-    <subpackage name="security"/>
+    <subpackage name="util">
+      <ownedClass xsi:type="mdeProject:Model" name="Calendar"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Collections"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="LinkedList"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Date"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="ArrayList"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="HashMap"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Locale"/>
+    </subpackage>
+    <subpackage name="io">
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="UnsupportedEncodingException"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="File"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="IOException"/>
+    </subpackage>
+    <subpackage name="security">
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="MessageDigest"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="NoSuchAlgorithmException"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="GeneralSecurityException"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="MessageDigestSpi"/>
+    </subpackage>
     <subpackage name="lang">
       <subpackage name="reflect"/>
     </subpackage>
-    <subpackage name="text"/>
+    <subpackage name="text">
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="DateFormat"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="ParseException"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Format"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="SimpleDateFormat"/>
+    </subpackage>
   </subpackage>
   <subpackage name="nl">
     <subpackage name="ecci">
@@ -37,7 +63,14 @@
           <ownedClass xsi:type="mdeProject:Model" name="Sticker"/>
           <ownedClass xsi:type="mdeProject:View" name="StickerFragment"/>
         </subpackage>
-        <subpackage name="beers"/>
+        <subpackage name="beers">
+          <ownedClass xsi:type="mdeProject:Model" name="Beer"/>
+          <ownedClass xsi:type="mdeProject:Model" name="Review"/>
+          <ownedClass xsi:type="mdeProject:View" name="BeerFragment"/>
+          <ownedClass xsi:type="mdeProject:View" name="SingleBeerActivity"/>
+          <ownedClass xsi:type="mdeProject:View" name="NewReviewActivity"/>
+          <ownedClass xsi:type="mdeProject:View" name="NewBeerActivity"/>
+        </subpackage>
         <subpackage name="meetings">
           <ownedClass xsi:type="mdeProject:Model" name="Meeting"/>
           <ownedClass xsi:type="mdeProject:View" name="SingleMeetingActivity"/>
@@ -54,14 +87,29 @@
           <ownedClass xsi:type="mdeProject:View" name="EventListFragment"/>
           <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="EventListAdapter"/>
         </subpackage>
-        <subpackage name="helpers"/>
+        <subpackage name="helpers">
+          <ownedClass xsi:type="mdeProject:View" name="NewItemActivity"/>
+          <ownedClass xsi:type="mdeProject:View" name="HamersActivity"/>
+          <ownedClass xsi:type="mdeProject:View" name="SingleImageActivity"/>
+          <ownedClass xsi:type="mdeProject:View" name="HamersFragment"/>
+          <ownedClass xsi:type="mdeProject:View" name="DatePickerFragment"/>
+          <ownedClass xsi:type="mdeProject:View" name="TimePickerFragment"/>
+          <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="DividerItemDecoration"/>
+        </subpackage>
         <subpackage name="quotes">
           <ownedClass xsi:type="mdeProject:Model" name="Quote"/>
           <ownedClass xsi:type="mdeProject:View" name="NewQuoteFragment"/>
           <ownedClass xsi:type="mdeProject:View" name="QuoteFragment"/>
           <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="QuoteAdapter"/>
         </subpackage>
-        <subpackage name="gcm"/>
+        <subpackage name="gcm">
+          <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="MyInstanceIDListenerService"/>
+          <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="RegistrationIntentService"/>
+        </subpackage>
+        <ownedClass xsi:type="mdeProject:View" name="MainActivity"/>
+        <ownedClass xsi:type="mdeProject:View" name="SettingsFragment"/>
+        <ownedClass xsi:type="mdeProject:View" name="AboutFragment"/>
+        <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="BuildConfig"/>
       </subpackage>
     </subpackage>
   </subpackage>
@@ -70,11 +118,26 @@
       <subpackage name="drawable">
         <ownedClass xsi:type="mdeProject:Model" name="Drawable"/>
       </subpackage>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="BitmapFactory"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Bitmap"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Canvas"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Color"/>
     </subpackage>
     <subpackage name="net">
       <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Uri"/>
     </subpackage>
-    <subpackage name="app"/>
+    <subpackage name="app">
+      <ownedClass xsi:type="mdeProject:Model" name="PendingIntent"/>
+      <ownedClass xsi:type="mdeProject:View" name="Activity"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Service"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Dialog"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="AlertDialog"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Notification"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="TimePickerDialog"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="NotificationManager"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="DatePickerDialog"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="IntentService"/>
+    </subpackage>
     <subpackage name="preference">
       <ownedClass xsi:type="mdeProject:Model" name="PreferenceManager"/>
     </subpackage>
@@ -86,19 +149,47 @@
         <ownedClass xsi:type="mdeProject:Model" name="Resources"/>
         <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="TypedArray"/>
       </subpackage>
-      <subpackage name="pm"/>
+      <subpackage name="pm">
+        <ownedClass xsi:type="mdeProject:Model" name="PackageManager"/>
+        <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="PackageInfo"/>
+      </subpackage>
+      <ownedClass xsi:type="mdeProject:Model" name="Context"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Intent"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="BroadcastReceiver"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="IntentFilter"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="ContentUris"/>
     </subpackage>
     <subpackage name="util">
       <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Log"/>
     </subpackage>
     <subpackage name="annotation"/>
-    <subpackage name="os"/>
+    <subpackage name="os">
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Bundle"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="AsyncTask"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Handler"/>
+    </subpackage>
     <subpackage name="text">
       <subpackage name="format">
         <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="DateFormat"/>
       </subpackage>
     </subpackage>
-    <subpackage name="widget"/>
+    <subpackage name="widget">
+      <ownedClass xsi:type="mdeProject:Model" name="EditText"/>
+      <ownedClass xsi:type="mdeProject:Model" name="Spinner"/>
+      <ownedClass xsi:type="mdeProject:Model" name="SeekBar"/>
+      <ownedClass xsi:type="mdeProject:View" name="ImageView"/>
+      <ownedClass xsi:type="mdeProject:View" name="TextView"/>
+      <ownedClass xsi:type="mdeProject:View" name="ScrollView"/>
+      <ownedClass xsi:type="mdeProject:View" name="AbsListView"/>
+      <ownedClass xsi:type="mdeProject:View" name="ListView"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Button"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="DatePicker"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Toast"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="TimePicker"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Filter"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="LinearLayout"/>
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="ArrayAdapter"/>
+    </subpackage>
     <subpackage name="view">
       <subpackage name="accessibility"/>
       <subpackage name="inputmethod">
@@ -113,6 +204,10 @@
       <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="MenuInflater"/>
       <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="LayoutInflater"/>
     </subpackage>
-    <subpackage name="provider"/>
+    <subpackage name="provider">
+      <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="CalendarContract"/>
+    </subpackage>
+    <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="R"/>
+    <ownedClass xsi:type="mdeProject:UnspecifiedClass" name="Manifest"/>
   </subpackage>
 </mdeProject:Root>

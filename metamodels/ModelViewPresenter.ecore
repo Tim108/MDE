@@ -22,7 +22,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnspecifiedClass" eSuperTypes="#//Class"/>
   <eClassifiers xsi:type="ecore:EClass" name="Class" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="class" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectedClass" upperBound="-1"
         eType="#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="#//Package"
         eOpposite="#//Package/ownedClass"/>

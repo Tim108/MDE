@@ -6,6 +6,11 @@ transformation ourJava2MVP(in ourjava : OURJAVA, out mvp);
 main() {
 	ourjava -> objectsOfType(ourjava::Root) -> asOrderedSet() -> first() -> map transformRoot();
 	
+	ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getModels());
+	ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getViews());
+	ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getPresenters());
+	ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getUnspecifiedClasses());
+	
 }
 
 mapping ourjava::Root::transformRoot() : mvp::Root{
@@ -17,37 +22,43 @@ mapping ourjava::Package::transformPackage() : mvp::Package{
 	name := self.name;
 	roott := self.root.resolveone(mvp::Root);
 	package := self.package.resolveone(mvp::Package);
+	
+	//ownedClass += self.getModels();
+	//ownedClass += self.getViews();
+	//ownedClass += self.getPresenters();
+	//ownedClass += self.getUnspecifiedClasses();
+	
 	subpackage := self.subPackage -> map transformPackage();
 	//ownedClass := self.ownedClass -> map transformClass();
 	
-	ownedClass += self.getModels();
-	ownedClass += self.getViews();
-	ownedClass += self.getPresenters();
-	ownedClass += self.getUnspecifiedClasses();
+	
 }
 
 query ourjava::Package::getModels() : Set(mvp::Model){
 	var allClasses := self.ownedClass;
-	var classes := allClasses -> select(c | c.getType() = "Model");
+	var classes := allClasses -> select(c | c.getType().startsWith("Model"));
+	classes -> forEach(e){log(e.name)};
 	return classes -> map transformToModel() -> asSet();
-	//return ourjava -> objectsOfType(ourjava::Class) -> asOrderedSet() -> first() -> map transformToModel();
 }
 
 query ourjava::Package::getViews() : Set(mvp::View){
 	var allClasses := self.ownedClass;
-	var classes := allClasses -> select(c | c.getType() = "View");
+	var classes := allClasses -> select(c | c.getType().startsWith("View"));
+	classes -> forEach(e){log(e.name)};
 	return classes -> map transformToView() -> asSet();
 }
 
 query ourjava::Package::getPresenters() : Set(mvp::Presenter){
 	var allClasses := self.ownedClass;
-	var classes := allClasses -> select(c | c.getType() = "Presenter");
+	var classes := allClasses -> select(c | c.getType().startsWith("Presenter"));
+	classes -> forEach(e){log(e.name)};
 	return classes -> map transformToPresenter() -> asSet();
 }
 
 query ourjava::Package::getUnspecifiedClasses() : Set(mvp::UnspecifiedClass){
 	var allClasses := self.ownedClass;
-	var classes := allClasses -> select(c | c.getType() = "UnspecifiedClass");
+	var classes := allClasses -> select(c | c.getType().startsWith("UnspecifiedClass"));
+	classes -> forEach(e){log(e.name)};
 	return classes -> map transformToUnspecifiedClass() -> asSet();
 }
 
@@ -60,35 +71,64 @@ query ourjava::Class::getType() : String{
 	//determining Model chance
 	var allMethods := self.method;
 	var getSetMethods := allMethods -> select(m | m.name.toLower().startsWith('get') or m.name.toLower().startsWith('set'));
-	var getSetPercentage := getSetMethods -> size() / allMethods -> size();
+	var getSetPercentage := 0.0;
+	if(allMethods -> size() <> 0 and getSetMethods -> size() <> 0){ getSetPercentage := getSetMethods -> size() / allMethods -> size()};
+	
 	var ownNameModel := self.name.find("Model") > 0; 
+	
+	//determining Presenter chance
+	var connections := self.imports -> collect(i | i.importedClass.resolveone(mvp::Class));
+	connections += self.imports -> collect(i | i.importedInterface.resolveone(mvp::Class));
+	var viewConnections := connections -> selectByType(mvp::View);
+	var modelConnections := connections -> selectByType(mvp::Model);
+	log('Total: ' + connections -> size().toString() + ' Views:' + viewConnections -> size().toString() + ' Models:' + modelConnections -> size().toString());
+	
+	//var usesViews := self.imports -> exists(i | i.importedClass.resolveone(mvp::Class) <> null and i.importedClass.resolveone(mvp::Class).oclIsTypeOf(mvp::View));
+	//usesViews := usesViews or self.imports -> exists(i | i.importedInterface.resolveone(mvp::Class) <> null and i.importedInterface.resolveone(mvp::Class).oclIsTypeOf(mvp::View));
+	//var usesModels := self.imports -> exists(i | i.importedClass.resolveone(mvp::Class) <> null and i.importedClass.resolveone(mvp::Class).oclIsTypeOf(mvp::Model));
+	//usesModels := usesModels or self.imports -> exists(i | i.importedInterface.resolveone(mvp::Class) <> null and i.importedInterface.resolveone(mvp::Class).oclIsTypeOf(mvp::Model));
 
 	//log(getSetPercentage.toString());
 	
 	//deciding
+	var reasoning := '\nImports view-like classes: ' + importsViewClasses.toString() + '\nOwn name is view-like: ' + ownNameView.toString() ;
+	reasoning := reasoning + '\nPercentage of methods that is getter or setter: ' + getSetPercentage.toString() + '\nOwn name is model-like: ' + ownNameModel.toString();
+	reasoning := '';
+
+	var decision : String := "";
 	switch{
-		case(importsViewClasses or ownNameView) return "View";
-		case(getSetPercentage > 0.5 or ownNameModel) return "Model";
-		else return "UnspecifiedClass";
-	}
+		case(importsViewClasses or ownNameView) decision := ("View" + reasoning);
+		case(getSetPercentage > 0.5 or ownNameModel) decision := ("Model" + reasoning);
+		case(viewConnections -> size() > 0 and modelConnections -> size() > 0) decision := ("Presenter" + reasoning);
+		else decision := ("UnspecifiedClass" + reasoning);
+	};
+	
+	log('Total: ' + connections -> size().toString() + ' Views:' + viewConnections -> size().toString() + ' Models:' + modelConnections -> size().toString() + ' Judgement:' + decision);
+	return decision;
 }
 
 mapping ourjava::Class::transformToUnspecifiedClass() : mvp::UnspecifiedClass{
 	name := self.name;
-	package := self.package.resolveone(mvp::Package);	
+	package := self.package.resolveone(mvp::Package);
+	package.ownedClass += self.late resolve(mvp::UnspecifiedClass);
+	//var imported := self.imports -> collect(i | i.importedClass);
+	//imported -> forEach(e){connectedClass += e.late resolveone(mvp::Class)};
 }
 
 mapping ourjava::Class::transformToModel() : mvp::Model{
 	name := self.name;
 	package := self.package.resolveone(mvp::Package);
+	package.ownedClass += self.late resolve(mvp::Model);
 }
 
 mapping ourjava::Class::transformToView() : mvp::View{
 	name := self.name;
 	package := self.package.resolveone(mvp::Package);
+	package.ownedClass += self.late resolve(mvp::View);
 }
 
 mapping ourjava::Class::transformToPresenter() : mvp::Presenter{
 	name := self.name;
 	package := self.package.resolveone(mvp::Package);
+	package.ownedClass += self.late resolve(mvp::Presenter);
 }

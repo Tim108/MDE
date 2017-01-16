@@ -466,9 +466,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_V5aZsNgREeaWrqRduvptvA" name="[0..1] class" sourceNode="_ddzoQNG7EealbrVOStcrlQ" targetNode="_ddzoQNG7EealbrVOStcrlQ">
-        <target xmi:type="ecore:EReference" href="ourjava.ecore#//Class/class"/>
-        <semanticElements xmi:type="ecore:EReference" href="ourjava.ecore#//Class/class"/>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_V5aZsNgREeaWrqRduvptvA" name="[0..1] innerClass" sourceNode="_ddzoQNG7EealbrVOStcrlQ" targetNode="_ddzoQNG7EealbrVOStcrlQ">
+        <target xmi:type="ecore:EReference" href="ourjava.ecore#//Class/innerClass"/>
+        <semanticElements xmi:type="ecore:EReference" href="ourjava.ecore#//Class/innerClass"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_V5bAwNgREeaWrqRduvptvA" routingStyle="manhattan" strokeColor="0,0,0">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_V5bAwdgREeaWrqRduvptvA" showIcon="false">
@@ -1015,8 +1015,8 @@
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_1ZHhpNpdEeaV-ovIVnnRJw" name="[0..1] class" sourceNode="_1Y8igNpdEeaV-ovIVnnRJw" targetNode="_1Y8igNpdEeaV-ovIVnnRJw">
-        <target xmi:type="ecore:EReference" href="ourjava.ecore#//Class/class"/>
-        <semanticElements xmi:type="ecore:EReference" href="ourjava.ecore#//Class/class"/>
+        <target xmi:type="ecore:EReference" href="ourjava.ecore#//Class/innerClass"/>
+        <semanticElements xmi:type="ecore:EReference" href="ourjava.ecore#//Class/innerClass"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_1ZHhpdpdEeaV-ovIVnnRJw" routingStyle="manhattan" strokeColor="0,0,0">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_1ZHhptpdEeaV-ovIVnnRJw" showIcon="false">
