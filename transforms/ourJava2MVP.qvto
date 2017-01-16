@@ -6,10 +6,12 @@ transformation ourJava2MVP(in ourjava : OURJAVA, out mvp);
 main() {
 	ourjava -> objectsOfType(ourjava::Root) -> asOrderedSet() -> first() -> map transformRoot();
 	
-	ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getModels());
-	ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getViews());
-	ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getPresenters());
-	ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getUnspecifiedClasses());
+	var models := ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getModels());
+	var views := ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getViews());
+	var presenters := ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getPresenters());
+	var unspecifiedClasses := ourjava -> objectsOfType(ourjava::Package) -> asOrderedSet() -> first() -> collect(p | p.getUnspecifiedClasses());
+	
+	
 	
 }
 
@@ -37,28 +39,24 @@ mapping ourjava::Package::transformPackage() : mvp::Package{
 query ourjava::Package::getModels() : Set(mvp::Model){
 	var allClasses := self.ownedClass;
 	var classes := allClasses -> select(c | c.getType().startsWith("Model"));
-	classes -> forEach(e){log(e.name)};
 	return classes -> map transformToModel() -> asSet();
 }
 
 query ourjava::Package::getViews() : Set(mvp::View){
 	var allClasses := self.ownedClass;
 	var classes := allClasses -> select(c | c.getType().startsWith("View"));
-	classes -> forEach(e){log(e.name)};
 	return classes -> map transformToView() -> asSet();
 }
 
 query ourjava::Package::getPresenters() : Set(mvp::Presenter){
 	var allClasses := self.ownedClass;
 	var classes := allClasses -> select(c | c.getType().startsWith("Presenter"));
-	classes -> forEach(e){log(e.name)};
 	return classes -> map transformToPresenter() -> asSet();
 }
 
 query ourjava::Package::getUnspecifiedClasses() : Set(mvp::UnspecifiedClass){
 	var allClasses := self.ownedClass;
 	var classes := allClasses -> select(c | c.getType().startsWith("UnspecifiedClass"));
-	classes -> forEach(e){log(e.name)};
 	return classes -> map transformToUnspecifiedClass() -> asSet();
 }
 
@@ -81,7 +79,6 @@ query ourjava::Class::getType() : String{
 	connections += self.imports -> collect(i | i.importedInterface.resolveone(mvp::Class));
 	var viewConnections := connections -> selectByType(mvp::View);
 	var modelConnections := connections -> selectByType(mvp::Model);
-	log('Total: ' + connections -> size().toString() + ' Views:' + viewConnections -> size().toString() + ' Models:' + modelConnections -> size().toString());
 	
 	//var usesViews := self.imports -> exists(i | i.importedClass.resolveone(mvp::Class) <> null and i.importedClass.resolveone(mvp::Class).oclIsTypeOf(mvp::View));
 	//usesViews := usesViews or self.imports -> exists(i | i.importedInterface.resolveone(mvp::Class) <> null and i.importedInterface.resolveone(mvp::Class).oclIsTypeOf(mvp::View));
@@ -103,7 +100,7 @@ query ourjava::Class::getType() : String{
 		else decision := ("UnspecifiedClass" + reasoning);
 	};
 	
-	log('Total: ' + connections -> size().toString() + ' Views:' + viewConnections -> size().toString() + ' Models:' + modelConnections -> size().toString() + ' Judgement:' + decision);
+	//log('Total: ' + connections -> size().toString() + ' Views:' + viewConnections -> size().toString() + ' Models:' + modelConnections -> size().toString() + ' Judgement:' + decision);
 	return decision;
 }
 
@@ -111,8 +108,6 @@ mapping ourjava::Class::transformToUnspecifiedClass() : mvp::UnspecifiedClass{
 	name := self.name;
 	package := self.package.resolveone(mvp::Package);
 	package.ownedClass += self.late resolve(mvp::UnspecifiedClass);
-	//var imported := self.imports -> collect(i | i.importedClass);
-	//imported -> forEach(e){connectedClass += e.late resolveone(mvp::Class)};
 }
 
 mapping ourjava::Class::transformToModel() : mvp::Model{
@@ -131,4 +126,21 @@ mapping ourjava::Class::transformToPresenter() : mvp::Presenter{
 	name := self.name;
 	package := self.package.resolveone(mvp::Package);
 	package.ownedClass += self.late resolve(mvp::Presenter);
+}
+
+mapping mvp::UnspecifiedClass::resolveConnectionsUnspecifiedClass() : mvp::UnspecifiedClass{
+	var imported := self.invresolveone(ourjava::Class).imports -> collect(i | i.importedClass);
+	imported -> forEach(e){connectedClass += e.late resolveone(mvp::Class)};
+}
+mapping mvp::UnspecifiedClass::resolveConnectionsModel() : mvp::Model{
+	var imported := self.invresolveone(ourjava::Class).imports -> collect(i | i.importedClass);
+	imported -> forEach(e){connectedClass += e.late resolveone(mvp::Class)};
+}
+mapping mvp::UnspecifiedClass::resolveConnectionsView() : mvp::View{
+	var imported := self.invresolveone(ourjava::Class).imports -> collect(i | i.importedClass);
+	imported -> forEach(e){connectedClass += e.late resolveone(mvp::Class)};
+}
+mapping mvp::UnspecifiedClass::resolveConnectionsPresenter() : mvp::Presenter{
+	var imported := self.invresolveone(ourjava::Class).imports -> collect(i | i.importedClass);
+	imported -> forEach(e){connectedClass += e.late resolveone(mvp::Class)};
 }
