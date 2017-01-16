@@ -27,9 +27,6 @@ mapping java::InterfaceDeclaration::transformInterface() : ourJava::Interface{
 }
 
 mapping java::ClassDeclaration::transformClass() : ourJava::Class{
-	init{
-		//var classes : Set(java::ClassDeclaration) := java -> objectsOfType(java::ClassDeclaration) -> asOrderedSet() -> first();
-	}
 	name := self.name;
 	package := self.package.resolveone(ourJava::Package);
 	superClass := self.superClass.type.oclAsType(java::ClassDeclaration).late resolveone(ourJava::Class);
@@ -41,24 +38,25 @@ mapping java::ClassDeclaration::transformClass() : ourJava::Class{
 
 	var importedInterfaces : Set(java::InterfaceDeclaration) := importedNamedElement -> selectByType(java::InterfaceDeclaration);
 
-	imports += importedClasses -> map makeImport();
-	imports += importedInterfaces -> map makeImport();
+	imports += importedClasses -> map makeImport1();
+	imports += importedInterfaces -> map makeImport2();
 	log("--- " + name + " ---------------------------------");
-	imports -> forEach(e){log(e.name)};
+	imports -> forEach(e){log('import: ' + e.name + '->' + e.toString())};
 	log("--------------------------------------------------");
 	
 	method += self.bodyDeclarations -> selectByType(java::MethodDeclaration) -> map transformMethod(self);
 	
 }
 
-mapping java::ClassDeclaration::makeImport() : ourJava::Import{
+mapping java::ClassDeclaration::makeImport1() : ourJava::Import{
 	log("making import of " + self.name);
 	importedClass := self.late resolveone(ourJava::Class);
 	if(importedClass = null){importedClass := self.map transformClass();};
 	name := self.name;
+	var herman := self.usagesInTypeAccess -> collect(t | t.qualifier)
 }
 
-mapping java::InterfaceDeclaration::makeImport() : ourJava::Import{
+mapping java::InterfaceDeclaration::makeImport2() : ourJava::Import{
 	log("making import of " + self.name);
 	importedInterface := self.late resolveone(ourJava::Interface);
 	if(importedInterface = null){importedInterface := self.map transformInterface();};
@@ -68,7 +66,27 @@ mapping java::InterfaceDeclaration::makeImport() : ourJava::Import{
 mapping java::MethodDeclaration::transformMethod(ownerOld : java::ClassDeclaration) : ourJava::Method{
 	name := self.name;
 	owner := ownerOld.resolveone(ourJava::Class);
+	log(owner.name + ':' + self.name);
+	var classdecls := self.body.getAllTypeAccess();
+	classdecls -> forEach(c){usesClass += c.late resolve(ourjava::Class)};
 }
+
+query java::Block::getAllTypeAccess() : Set(java::ClassDeclaration){
+	var typeAccesses : Set(java::ClassDeclaration);
+	
+	//general
+	var vardecls := self.statements -> selectByType(java::VariableDeclarationStatement);
+	var tempTypeAccess := vardecls -> collect(ta | ta.type);
+	var tempTypes := tempTypeAccess -> collect(e | e.type);
+	typeAccesses += tempTypes -> selectByType(java::ClassDeclaration) -> asSet();
+	
+	//in if
+	var ifs := self.statements -> selectByType(java::IfStatement);
+	typeAccesses += ifs -> collect(e | e.thenStatement.oclAsType(java::Block).getAllTypeAccess());
+	
+	return typeAccesses;
+}
+
 
 
 
