@@ -52,14 +52,23 @@ query ourjava::Package::getUnspecifiedClasses() : Set(mvp::UnspecifiedClass){
 }
 
 query ourjava::Class::getType() : String{
-
+	//determining View chance
+	var importsViewClasses := self.imports -> collect(e | e.importedClass.name.toLowerCase()) -> exists(name | name = "activity" or name = "view" or name = "fragment");
+	//self.imports -> collect(e|e.importedClass.name) -> forEach(name){log(name)};
+	var ownNameView := self.name.find("View") > 0 or self.name.find("Activity") > 0 or self.name.find("Fragment") > 0; 
+	
+	//determining Model chance
 	var allMethods := self.method;
 	var getSetMethods := allMethods -> select(m | m.name.toLower().startsWith('get') or m.name.toLower().startsWith('set'));
 	var getSetPercentage := getSetMethods -> size() / allMethods -> size();
-	log(allMethods -> size().repr());
+	var ownNameModel := self.name.find("Model") > 0; 
+
+	//log(getSetPercentage.toString());
+	
+	//deciding
 	switch{
-		case(getSetPercentage > 0.0) return "Model";
-		case(true) return "View";
+		case(importsViewClasses or ownNameView) return "View";
+		case(getSetPercentage > 0.5 or ownNameModel) return "Model";
 		else return "UnspecifiedClass";
 	}
 }
